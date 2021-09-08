@@ -1,22 +1,19 @@
 fileFormatVersion: 2
-guid: 144fa36899af5d84a9275aa521052e15
+guid: b6ca66681a2b8e44e96638a995a07bd1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8765297898444631108
-    second: terrain_0
+      213: -7500690451134026123
+    second: Take Hit_0
   - first:
-      213: -5519051278557835307
-    second: terrain_1
+      213: -889859373511162655
+    second: Take Hit_1
   - first:
-      213: 2963411684039260603
-    second: terrain_2
+      213: -3088938797480143695
+    second: Take Hit_2
   - first:
-      213: -4725923292034538642
-    second: terrain_3
-  - first:
-      213: 8517107447714677574
-    second: terrain_4
+      213: -9206091644520726168
+    second: Take Hit_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -61,7 +58,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 10
+  spritePixelsToUnits: 25
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -118,106 +115,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: terrain_0
+      name: Take Hit_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 144
-        width: 160
-        height: 41
+        y: 0
+        width: 140
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 44c25438ff794a970800000000000000
-      internalID: 8765297898444631108
+      spriteID: 57eedf966c138e790800000000000000
+      internalID: -7500690451134026123
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain_1
+      name: Take Hit_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 32
-        width: 97
-        height: 47
+        x: 140
+        y: 0
+        width: 140
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5df05647a146863b0800000000000000
-      internalID: -5519051278557835307
+      spriteID: 1e4c0dd4d9596a3f0800000000000000
+      internalID: -889859373511162655
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain_2
+      name: Take Hit_2
       rect:
         serializedVersion: 2
-        x: 129
-        y: 96
-        width: 30
-        height: 16
+        x: 280
+        y: 0
+        width: 140
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb9f66ec937202920800000000000000
-      internalID: 2963411684039260603
+      spriteID: 1b416439782e125d0800000000000000
+      internalID: -3088938797480143695
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain_3
+      name: Take Hit_3
       rect:
         serializedVersion: 2
-        x: 143
-        y: 26
-        width: 34
-        height: 12
+        x: 420
+        y: 0
+        width: 140
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e63698e0ec52a6eb0800000000000000
-      internalID: -4725923292034538642
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: terrain_4
-      rect:
-        serializedVersion: 2
-        x: 7
-        y: 79
-        width: 116
-        height: 50
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6430ede1918d23670800000000000000
-      internalID: 8517107447714677574
+      spriteID: 86186aedc646d3080800000000000000
+      internalID: -9206091644520726168
       vertices: []
       indices: 
       edges: []
