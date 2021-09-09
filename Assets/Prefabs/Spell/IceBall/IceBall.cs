@@ -13,9 +13,15 @@ public class IceBall : Spell
     public override void Shoot(Vector3 target,Vector3 castPoint)
     {
       
-        Vector2 direction = (target - castPoint).normalized; 
+        Vector2 direction = (target - castPoint).normalized;
+        Vector2 dirRotate =  castPoint-target;
+        float angle = Mathf.Atan2(dirRotate.y, dirRotate.x) * Mathf.Rad2Deg;
+        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+        var projectile =  Instantiate(templateIceBall,castPoint,rotation);
         float damage = Random.Range(damageRange.x, damageRange.y);
-        var projectile =  Instantiate(templateIceBall,castPoint,Quaternion.identity);
         projectile.InitProjectile(speed, damage, direction);
+        
     }
+    
 }

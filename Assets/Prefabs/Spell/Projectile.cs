@@ -4,10 +4,18 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    [SerializeField] private float delayAfterCollison;
     private float _speed;
     private float _damage;
-    private Vector2 _direction;
-    public void InitProjectile(float speed,float damage,Vector2 direction )
+    private Vector3 _direction;
+    private Animator _animator;
+    
+    private void Awake()
+    {
+        _animator = GetComponent<Animator>();
+        
+    }
+    public void InitProjectile(float speed,float damage,Vector3 direction )
     {
         _speed = speed;
         _damage = damage;
@@ -16,8 +24,8 @@ public class Projectile : MonoBehaviour
 
 
     void Update()
-    {
-        transform.Translate(_direction * _speed * Time.deltaTime);
+    { 
+        transform.position += _direction * Time.deltaTime * _speed;  
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -25,7 +33,14 @@ public class Projectile : MonoBehaviour
         if (collision.TryGetComponent(out Enemy enemy))
         {
             enemy.TakeDamage(_damage);
+            _speed = 0;
+            _animator.Play("Break");
+            StartCoroutine(Disable());
         }
+    }
+    private IEnumerator Disable()
+    {
+        yield return new WaitForSeconds(delayAfterCollison);
         Destroy(gameObject);
     }
 }
