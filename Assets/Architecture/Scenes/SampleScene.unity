@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 45303217}
   - component: {fileID: 45303216}
   - component: {fileID: 45303215}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RedMoonTower_free_idle_animation._0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -603,7 +603,7 @@ GameObject:
   - component: {fileID: 352930235}
   - component: {fileID: 352930239}
   - component: {fileID: 352930238}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -708,9 +708,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ccec9b76d082144aa383a723db975c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 20
   spells:
-  - {fileID: 3724667570420158924, guid: 533916e388521094a92b98afb3c5425b, type: 3}
+  - {fileID: 4167088091820504161, guid: 6b4b87cbf623627448c2bbea2682c58c, type: 3}
   castPoint: {fileID: 839652609}
   dealyAfterAttack1: 0.45
   delayBeforeAttack1: 0.45
@@ -961,7 +961,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 839652609}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CastPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -998,10 +998,12 @@ GameObject:
   - component: {fileID: 1057564597}
   - component: {fileID: 1057564596}
   - component: {fileID: 1057564595}
-  - component: {fileID: 1057564594}
   - component: {fileID: 1057564593}
   - component: {fileID: 1057564592}
-  m_Layer: 0
+  - component: {fileID: 1057564594}
+  - component: {fileID: 1057564599}
+  - component: {fileID: 1057564598}
+  m_Layer: 6
   m_Name: HeroKnight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1173,13 +1175,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1057564586}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f20d66e841afa943b6e2ca2d3f87b9a, type: 3}
+  m_Script: {fileID: 11500000, guid: 8e3db40c6b038724295da3ca5710d3cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   transitions:
   - {fileID: 1057564593}
-  damage: 2
-  delay: 1
+  - {fileID: 1057564598}
+  - {fileID: 1057564599}
+  damage: 1
+  delay: 0.8
 --- !u!114 &1057564595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1193,7 +1197,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetState: {fileID: 1057564594}
-  distanceTransition: 7
+  distanceTransition: 2
+  distancePlayerAttackTransition: 7
   rangeSpread: 0.5
 --- !u!114 &1057564596
 MonoBehaviour:
@@ -1209,7 +1214,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transitions:
   - {fileID: 1057564595}
+  - {fileID: 1057564598}
   speed: 2
+  groundY: -3.5
+  isRight: 1
 --- !u!114 &1057564597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1223,6 +1231,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstState: {fileID: 1057564596}
+--- !u!114 &1057564598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057564586}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0843c9d7ba3606b47a769f559662c1fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetState: {fileID: 1057564596}
+  distanceView: 2
+  layerNumber: 7
+--- !u!114 &1057564599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057564586}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68e6ec4caf5cdda4695a4d21de71bdba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetState: {fileID: 1057564596}
 --- !u!1 &1066871268
 GameObject:
   m_ObjectHideFlags: 0

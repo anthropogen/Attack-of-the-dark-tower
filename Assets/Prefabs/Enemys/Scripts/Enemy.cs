@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-public class Enemy : MonoBehaviour
+public class Enemy : Character
 {
-    [SerializeField] private float health;
     [SerializeField] private int reward;
     [SerializeField] private Player target;
     [SerializeField] private Color damageView;
@@ -18,7 +17,7 @@ public class Enemy : MonoBehaviour
         _renderer = GetComponent<SpriteRenderer>();
         _default = _renderer.color;
     }
-    public void TakeDamage(float damage)
+    public override void TakeDamage(float damage)
     {
         health -= damage;
         StartCoroutine(ViewDamage());

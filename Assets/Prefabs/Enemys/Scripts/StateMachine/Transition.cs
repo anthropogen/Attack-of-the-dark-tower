@@ -6,10 +6,10 @@ using UnityEngine;
 public abstract class Transition : MonoBehaviour
 {
     [SerializeField] private State targetState;
-    protected Player Target { get; private set; }
+    protected Character Target { get; private set; }
     public State TargetState => targetState;
     public bool NeedTransit { get; protected set; }
-    internal void Init(Player target)
+    internal void Init(Character target)
     {
         Target = target ;
     }

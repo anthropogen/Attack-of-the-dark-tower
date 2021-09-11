@@ -1,14 +1,11 @@
-
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(Animator))]
-public class Player : MonoBehaviour
+public class Player : Character
 {
-    [SerializeField] private int health;
     [SerializeField] private List<Spell> spells;
     [SerializeField] private Transform castPoint;
     [SerializeField] private float dealyAfterAttack1;
@@ -17,7 +14,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float delayBeforeAttack2;
     private bool IsAttacking;
     private Spell _currentSpell;
-    private int _currentHealth;
+    private float _currentHealth;
     private Animator _animator;
     public int Money { get; private set; }
    private void Start()
@@ -27,14 +24,7 @@ public class Player : MonoBehaviour
         _animator = GetComponent<Animator>();
         IsAttacking = false;
     }
-    internal void ApplyDamage(int damage)
-    {
-        _currentHealth-=damage;
-        if (_currentHealth<0)
-        {
-            Destroy(gameObject);
-        }
-    }
+   
     private void OnEnemyDeath(int reward)
     {
         Money += reward;
@@ -64,5 +54,14 @@ public class Player : MonoBehaviour
         _currentSpell.Shoot(target, castPoint.position);
         yield return new WaitForSeconds(delayAfterAttack);
         IsAttacking = false;
+    }
+
+    public override void TakeDamage(float damage)
+    {
+        _currentHealth -= damage;
+        if (_currentHealth < 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

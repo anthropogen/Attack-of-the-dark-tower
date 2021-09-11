@@ -5,8 +5,8 @@ using UnityEngine;
 public abstract class State : MonoBehaviour
 {
     [SerializeField] private List<Transition> transitions;
-    protected Player Target { get; private set; }
-    public void Enter(Player target)
+    protected Character Target { get; private set; }
+    public void Enter(Character target)
     {
         if (enabled==false)
         {

@@ -1,33 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[RequireComponent(typeof(Animator))]
-public class MeleeAttackState : State
+
+public class MeleeAttackState : AttackState
 {
-    [SerializeField] private int damage;
-    [SerializeField] private float delay;
-    private float _lastAttackTime;
     private Animator _animator;
+
+    protected override void Attack(Character target)
+    {
+        _animator.Play("Attack");
+        Debug.Log("attack");
+        target.TakeDamage(damage);
+    }
 
     private void Awake()
     {
         _animator = GetComponent<Animator>();
     }
-    private void Update()
-    {
-        if (_lastAttackTime <= 0)
-        {
-            Attack(Target);
-            _lastAttackTime = delay;
-        }
-        _lastAttackTime -= Time.deltaTime;
-    }
-
-    private void Attack(Player target)
-    {
-        _animator.Play("Attack");
-        target.ApplyDamage(damage);
-    }
+   
 }
-
-
