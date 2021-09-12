@@ -19,16 +19,19 @@ public class DistanceTransition : Transition
     }
     private void Update()
     {
-        if (Vector2.Distance(transform.position,Target.transform.position)<distanceTransition)
+        if (Target!=null)
+        {
+        if (Vector2.Distance(transform.position, Target.transform.position) < distanceTransition)
         {
             NeedTransit = true;
         }
-        else if (Target.GetType()==typeof(Player))
+        else if (Target.GetType() == typeof(Player))
         {
-            if (Vector2.Distance(transform.position, Target.transform.position) <distancePlayerAttackTransition)
+            if (Vector2.Distance(transform.position, Target.transform.position) < distancePlayerAttackTransition)
             {
                 NeedTransit = true;
             }
-        }
+        } 
+    }
     }
 }

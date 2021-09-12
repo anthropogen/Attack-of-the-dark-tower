@@ -15,15 +15,18 @@ public class MoveState : State
     }
     private void Update()
     {
-        currentPositionX = transform.position.x;
-        if (currentPositionX>lastPositionX&&!isRight|| currentPositionX < lastPositionX && isRight)
+        if (Target!=null)
         {
-            Spin();
+            currentPositionX = transform.position.x;
+            if (currentPositionX > lastPositionX && !isRight || currentPositionX < lastPositionX && isRight)
+            {
+                Spin();
+            }
+            lastPositionX = currentPositionX;
+            Vector2 pos = Vector2.MoveTowards(transform.position, Target.transform.position, speed * Time.deltaTime);
+            pos.y = groundY;
+            transform.position = pos;
         }
-        lastPositionX = currentPositionX;
-         Vector2 pos   = Vector2.MoveTowards(transform.position, Target.transform.position, speed * Time.deltaTime);
-        pos.y = groundY;
-        transform.position = pos;
     }
 
 

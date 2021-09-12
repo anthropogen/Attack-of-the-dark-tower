@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Animator))]
 public class Player : Character
@@ -17,15 +18,18 @@ public class Player : Character
     private float _currentHealth;
     private Animator _animator;
     public int Money { get; private set; }
+    public UnityAction<float, float> HealthChanged;
    private void Start()
     {
         _currentSpell = spells[0];
         _currentHealth = health;
+        HealthChanged?.Invoke(_currentHealth, health);
         _animator = GetComponent<Animator>();
         IsAttacking = false;
+        
     }
-   
-    private void OnEnemyDeath(int reward)
+
+    public void AddMoney(int reward)
     {
         Money += reward;
     }
@@ -59,6 +63,7 @@ public class Player : Character
     public override void TakeDamage(float damage)
     {
         _currentHealth -= damage;
+        HealthChanged?.Invoke(_currentHealth, health);
         if (_currentHealth < 0)
         {
             Destroy(gameObject);

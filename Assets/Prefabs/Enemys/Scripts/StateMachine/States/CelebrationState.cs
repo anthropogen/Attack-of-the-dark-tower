@@ -11,7 +11,8 @@ public class CelebrationState : State
     }
     private void OnEnable()
     {
-        _animator.Play("Celabration");
+        _animator.SetBool("Celebration",true);
+        //_animator.Play("Celabration");
     }
     private void OnDisable()
     {

@@ -5,13 +5,18 @@ using UnityEngine.Events;
 public class Enemy : Character
 {
     [SerializeField] private int reward;
-    [SerializeField] private Player target;
     [SerializeField] private Color damageView;
     [SerializeField] private float timeViewDamage;
     private Color _default;
     private SpriteRenderer _renderer;
-    public Player Target => target;
-    public UnityEvent Death;
+    private Player _target;
+    public Player Target => _target;
+    public UnityAction<Enemy> Death;
+    public int Reward => reward;
+    public void Init(Player player)
+    {
+        _target = player;
+    }
     private void Awake()
     {
         _renderer = GetComponent<SpriteRenderer>();
@@ -23,7 +28,7 @@ public class Enemy : Character
         StartCoroutine(ViewDamage());
         if (health<0)
         {
-            Death = null;
+            Death.Invoke(this);
             Destroy(gameObject);
         }
     }
