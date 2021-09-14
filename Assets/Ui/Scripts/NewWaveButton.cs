@@ -22,6 +22,7 @@ public class NewWaveButton : MonoBehaviour
     {
         nextWave.gameObject.SetActive(true);
     }    
+
     public void OnButtonClick()
     {
         spawner.NextWave();

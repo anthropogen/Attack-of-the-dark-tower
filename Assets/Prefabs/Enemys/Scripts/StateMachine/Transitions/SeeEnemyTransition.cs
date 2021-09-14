@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class SeeEnemyTransition : Transition
@@ -22,7 +21,6 @@ public class SeeEnemyTransition : Transition
             {
                 if (hit.collider.gameObject.layer==layerNumber)
                 {
-                    Debug.Log(hits[0].transform.gameObject.name);
                     if (hit.transform.gameObject.TryGetComponent<Character>(out Character target))
                     {
                         GetComponent<EnemyStateMachine>().ChangeTarget(target);

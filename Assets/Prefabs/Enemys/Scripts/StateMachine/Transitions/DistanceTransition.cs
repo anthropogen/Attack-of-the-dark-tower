@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class DistanceTransition : Transition
@@ -13,6 +12,7 @@ public class DistanceTransition : Transition
         distanceTransition =RandomDistance(distanceTransition);
         distancePlayerAttackTransition = RandomDistance(distancePlayerAttackTransition);
     }
+
     public float RandomDistance(float distance)
     {
       return distance += Random.Range(-rangeSpread, rangeSpread);

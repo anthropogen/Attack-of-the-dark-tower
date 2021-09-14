@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HudBar: Bar
+public class HealthBar: Bar
 {
     [SerializeField] private Player player;
+
     private void OnEnable()
     {
         player.HealthChanged += OnValueChanged;

@@ -1,6 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+
 
 public class PlayerDieTransition: Transition
 {
@@ -12,7 +10,6 @@ public class PlayerDieTransition: Transition
             stateMachine.ChangeTarget(stateMachine.Player);
             if (stateMachine.Player==null)
             {
-               Debug.Log( "Player Die");
                 NeedTransit = true;
             }
         }

@@ -1,13 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class EnemyStateMachine : MonoBehaviour
 {
     [SerializeField] private State firstState;
+    [SerializeField] private bool isRight;
     private State _currentState;
     private Player _targetPlayer;
-    private Character _targetCharacter;
     private Character _currentTarget;
     public Player Player => _targetPlayer;
     public State CurrentState => _currentState;
@@ -35,6 +34,15 @@ public class EnemyStateMachine : MonoBehaviour
         {
             Transit(next);
         }
+       
+            if (_currentTarget != null)
+            {
+                if (transform.position.x > _currentTarget.transform.position.x && !isRight || transform.position.x < _currentTarget.transform.position.x && isRight)
+                {
+                    Spin();
+                }
+            }
+        
     }
     private void Transit(State nextState
         
@@ -54,5 +62,9 @@ public class EnemyStateMachine : MonoBehaviour
     {
         _currentTarget = newTarget;
     }
-
+    private void Spin()
+    {
+        transform.Rotate(0, 180, 0);
+        isRight = !isRight;
+    }
 }

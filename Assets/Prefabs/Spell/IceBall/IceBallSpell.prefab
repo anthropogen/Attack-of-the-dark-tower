@@ -44,10 +44,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   label: Ice Ball
+  description: 
   price: 15
   icon: {fileID: 21300000, guid: 36f0f440cb562e74f8e5f7f89c5e78cc, type: 3}
   isByed: 1
   isProjectile: 1
-  damageRange: {x: 2, y: 4}
+  costMana: 1
+  damageRange: {x: 1, y: 3}
   speed: 15
   templateIceBall: {fileID: 3505723362421336106, guid: 107af3dfd11de9f45b25882c5544598e, type: 3}

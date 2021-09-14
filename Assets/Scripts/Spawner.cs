@@ -37,7 +37,6 @@ public class Spawner : MonoBehaviour
             if (waves.Count>_currentWaveNumber+1)
             {
                 AllEnemySpawned?.Invoke();
-                Debug.Log("spawnEnd");
             }
             _currentWave = null;
             _spawned = 0;

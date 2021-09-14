@@ -150,11 +150,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 986142b2bbd7b9448b764a84f6d74697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 2
   _target: {fileID: 0}
   reward: 1
-  damageView: {r: 1, g: 0, b: 0, a: 1}
-  timeViewDamage: 0.5
 --- !u!114 &1953884297735355990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,6 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstState: {fileID: 1953884297735355991}
+  isRight: 0
 --- !u!114 &1953884297735355991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,7 +185,6 @@ MonoBehaviour:
   - {fileID: 1953884297735355986}
   speed: 2
   groundY: -3.5
-  isRight: 1
 --- !u!114 &1953884297735355984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,7 +198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetState: {fileID: 1953884297735355985}
-  distanceTransition: 2
+  distanceTransition: 3
   distancePlayerAttackTransition: 7
   rangeSpread: 0.5
 --- !u!114 &1953884297735355986
@@ -272,5 +270,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetState: {fileID: 1953884297735355991}
-  distanceView: 2
+  distanceView: 4
   layerNumber: 7

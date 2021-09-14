@@ -5,6 +5,7 @@ using UnityEngine;
 public class Minion : Character
 {
   [SerializeField]  private Player _player;
+
     public void Init(Player player)
     {
         _player = player;
@@ -14,9 +15,9 @@ public class Minion : Character
         health -= damage;
         if (health<=0)
         {
-           
             Destroy(gameObject);
         }
     }
-
+    
+   
 }

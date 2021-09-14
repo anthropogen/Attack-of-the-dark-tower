@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f4d5fa73f7aa014e838fac01ab266ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 5
   _target: {fileID: 0}
   _player: {fileID: 0}
 --- !u!114 &4039489050012869859
@@ -122,6 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstState: {fileID: 4039489050012869860}
+  isRight: 0
 --- !u!114 &4039489050012869860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,7 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetState: {fileID: 4039489050012869862}
-  born: {fileID: 7400000, guid: f9bd93258708932409e41062081c3646, type: 2}
+  _lenghtAnim: 0.7
 --- !u!114 &4039489050012869862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,7 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetState: {fileID: 4039489050012869865}
-  distanceView: 10
+  distanceView: 14
   layerNumber: 6
 --- !u!114 &4039489050012869864
 MonoBehaviour:
@@ -209,9 +210,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transitions:
   - {fileID: 4039489050012869866}
+  - {fileID: 4039489050012869886}
   speed: 1.5
   groundY: -2.4
-  isRight: 1
 --- !u!114 &4039489050012869866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,7 +236,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4039489050012869868}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1878bd32bbf57e428c39cdd9a3e7bca, type: 3}
   m_Name: 
