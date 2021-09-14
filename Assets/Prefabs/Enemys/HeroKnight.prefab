@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
+  _target: {fileID: 0}
   reward: 1
   damageView: {r: 1, g: 0, b: 0, a: 1}
   timeViewDamage: 0.5
@@ -182,6 +183,7 @@ MonoBehaviour:
   transitions:
   - {fileID: 1953884297735355984}
   - {fileID: 1953884297735355989}
+  - {fileID: 1953884297735355986}
   speed: 2
   groundY: -3.5
   isRight: 1
@@ -241,10 +243,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transitions:
   - {fileID: 1953884297735355986}
-  - {fileID: 1953884297735355989}
   - {fileID: 1953884297735355988}
   damage: 1
-  delay: 0.8
+  attack: {fileID: 7400000, guid: ed2294541f1d6604bb2b23268f315d79, type: 2}
 --- !u!114 &1953884297735355988
 MonoBehaviour:
   m_ObjectHideFlags: 0

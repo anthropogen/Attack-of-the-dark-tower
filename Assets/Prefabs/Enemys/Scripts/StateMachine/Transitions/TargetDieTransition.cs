@@ -9,8 +9,9 @@ public class TargetDieTransition : Transition
     {
         if (Target == null)
         {
-            GetComponent<EnemyStateMachine>().ResetTarget();
-            if (Target!=null)
+          var stateMachine=  GetComponent<EnemyStateMachine>();
+            stateMachine.ChangeTarget(stateMachine.Player);
+            if (stateMachine.Player!=null)
             {
                 NeedTransit = true;
             }

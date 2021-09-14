@@ -9,8 +9,6 @@ public class Enemy : Character
     [SerializeField] private float timeViewDamage;
     private Color _default;
     private SpriteRenderer _renderer;
-    private Player _target;
-    public Player Target => _target;
     public UnityAction<Enemy> Death;
     public int Reward => reward;
     public void Init(Player player)

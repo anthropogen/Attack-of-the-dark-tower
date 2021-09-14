@@ -1,18 +1,22 @@
 
 using UnityEngine;
-using UnityEngine.Events;
+
 
 public class Minion : Character
 {
-   
-    public UnityEvent DeathMinion;
+  [SerializeField]  private Player _player;
+    public void Init(Player player)
+    {
+        _player = player;
+    }
     public override void TakeDamage(float damage)
     {
         health -= damage;
         if (health<=0)
         {
-            DeathMinion?.Invoke();
+           
             Destroy(gameObject);
         }
     }
+
 }

@@ -9,12 +9,23 @@ public class MoveState : State
     [SerializeField] private bool isRight;
     private float currentPositionX;
     private float lastPositionX;
+    private Animator _animator;
+    private void Start()
+    {
+        _animator = GetComponent<Animator>();
+    }
     private void OnEnable()
     {
         lastPositionX = currentPositionX = transform.position.x;
+        _animator.SetBool("Run",true);
+    }
+    private void OnDisable()
+    {
+        _animator.SetBool("Run", false);
     }
     private void Update()
     {
+        
         if (Target!=null)
         {
             currentPositionX = transform.position.x;

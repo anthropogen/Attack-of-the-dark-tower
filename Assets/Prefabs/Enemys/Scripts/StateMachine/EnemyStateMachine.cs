@@ -9,10 +9,11 @@ public class EnemyStateMachine : MonoBehaviour
     private Player _targetPlayer;
     private Character _targetCharacter;
     private Character _currentTarget;
+    public Player Player => _targetPlayer;
     public State CurrentState => _currentState;
     private void Start()
     {
-        _currentTarget= _targetPlayer = GetComponent<Enemy>().Target;
+        _currentTarget= _targetPlayer = GetComponent<Character>().Target;
         Reset(firstState);
     }
     private void Reset(State startState)
@@ -53,8 +54,5 @@ public class EnemyStateMachine : MonoBehaviour
     {
         _currentTarget = newTarget;
     }
-    public void ResetTarget()
-    {
-        _currentTarget = _targetPlayer;
-    }
+
 }
