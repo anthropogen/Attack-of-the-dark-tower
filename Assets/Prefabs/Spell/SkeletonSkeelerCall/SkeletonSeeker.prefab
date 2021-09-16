@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   label: Call Skeleton Sekeer
-  description: 
+  damageDescription: 1
   price: 20
   icon: {fileID: -1454694012045987069, guid: 7d1bc034f335bd442abea0946a560575, type: 3}
   isByed: 0

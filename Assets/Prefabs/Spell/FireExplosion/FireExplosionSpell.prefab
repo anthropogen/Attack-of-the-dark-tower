@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   label: Fire Explosion
-  description: 
-  price: 15
+  damageDescription: 1
+  price: 10
   icon: {fileID: -7152369420991722564, guid: 9f461b7586bc61a44bfebdb00b3e415b, type: 3}
   isByed: 1
   isProjectile: 0
