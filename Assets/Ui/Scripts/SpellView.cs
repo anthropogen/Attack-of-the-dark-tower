@@ -34,7 +34,7 @@ public class SpellView : MonoBehaviour
     public void Renderer(Spell spell)
     {
         _spell = spell;
-        price.text = spell.Price;
+        price.text = spell.Price.ToString();
         icon.sprite = spell.Icon;
         label.text = spell.Label;
         damage.text = spell.DamageDescription;

@@ -20,11 +20,21 @@ public class SpellBook : MonoBehaviour
     private void AddItem(Spell spell)
     {
         var view = Instantiate(template, itemContainer.transform);
+        view.SellButtonClick += OnBuyButtonClick;
         view.Renderer(spell);
     }
 
     private void OnBuyButtonClick(Spell spell, SpellView view)
     {
-
+        TrySellBuySpell(spell, view);
     }
+    private void TrySellBuySpell(Spell spell, SpellView view)
+    {
+        if (spell.Price<=player.Crystal)
+        {
+            player.BuySpell(spell);
+            spell.Buy();
+            view.SellButtonClick -= OnBuyButtonClick;
+        }
+    }    
 }

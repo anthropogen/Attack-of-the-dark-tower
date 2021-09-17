@@ -16,38 +16,37 @@ public class Player : Character
     [SerializeField] private float maxMana;
     [SerializeField] private float speedRegenMana;
     private float _currentMana;
-    private bool IsAttacking;
+    private bool _IsAttacking;
+    private int _currentSpellIndex=0;
     private Spell _currentSpell;
     private float _currentHealth;
     private Animator _animator;
-    public int Money { get; private set; }
-    public UnityAction<float, float> HealthChanged;
-    public UnityAction<float, float> ManaChanged;
+    public int Crystal { get; private set; }
+    public event UnityAction<float, float> HealthChanged;
+    public event UnityAction<float, float> ManaChanged;
+    public event UnityAction CrystalChanged;
    private void Start()
     {
-        _currentSpell = spells[0];
+        ChangeSpell(spells[_currentSpellIndex]);
         _currentHealth = health;
         _currentMana = maxMana;
         HealthChanged?.Invoke(_currentHealth, health);
         ManaChanged?.Invoke(_currentMana, maxMana);
+        CrystalChanged?.Invoke();
         _animator = GetComponent<Animator>();
-        IsAttacking = false;
+        _IsAttacking = false;
         StartCoroutine(RegenerationMana());
         
-    }
-    public void AddMoney(int reward)
-    {
-        Money += reward;
     }
     
     private void Update()
     {
        if(Input.GetMouseButtonDown(0)&&!EventSystem.current.IsPointerOverGameObject()&&_currentSpell!=null)
         {
-            if (IsAttacking==false&&_currentMana>_currentSpell.CostMana)
+            if (_IsAttacking==false&&_currentMana>_currentSpell.CostMana)
             {
                 Vector2 clickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                IsAttacking = true;
+                _IsAttacking = true;
                 if (_currentSpell.IsProjectile)
                 {
                     _animator.SetTrigger("Attack2");
@@ -63,12 +62,24 @@ public class Player : Character
             }  
         }
     }
+   public void BuySpell(Spell newSpell )
+    {
+        Crystal -= newSpell.Price;
+        CrystalChanged?.Invoke();
+        spells.Add(newSpell);
+    }
+    public void AddMoney(int reward)
+    {
+        Crystal += reward;
+        Debug.Log(Crystal);
+        CrystalChanged?.Invoke();
+    }
    private IEnumerator Attack(float delayBeforeAttack1,float delayAfterAttack,Vector2 target)
     {
         yield return new WaitForSeconds(delayBeforeAttack1);
         _currentSpell.Shoot(target, castPoint.position);
         yield return new WaitForSeconds(delayAfterAttack);
-        IsAttacking = false;
+        _IsAttacking = false;
     }
 
     public override void TakeDamage(float damage)
@@ -92,5 +103,34 @@ public class Player : Character
             }
             ManaChanged?.Invoke(_currentMana, maxMana);
         }
+    }
+    public void NextSpell()
+    {
+
+        if (_currentSpellIndex==spells.Count-1)
+        {
+            _currentSpellIndex = 0;
+        }
+        else
+        {
+            _currentSpellIndex++;
+        }
+        ChangeSpell(spells[_currentSpellIndex]);
+    }
+    public void PreviousSpell()
+    {
+        if (_currentSpellIndex==0)
+        {
+            _currentSpellIndex = spells.Count - 1;
+        }
+        else
+        {
+            _currentSpellIndex--;
+        }
+        ChangeSpell(spells[_currentSpellIndex]);
+    }    
+    public void ChangeSpell(Spell newCurrentSpell)
+    {
+        _currentSpell = newCurrentSpell;
     }
 }
