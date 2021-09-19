@@ -15,7 +15,7 @@ public class Minion : Character
         health -= damage;
         if (health<=0)
         {
-            Destroy(gameObject);
+           gameObject.SetActive(false);
         }
     }
     

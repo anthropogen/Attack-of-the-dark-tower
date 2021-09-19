@@ -180,6 +180,55 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &1333063290
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1333063291}
+  - component: {fileID: 1333063292}
+  m_Layer: 0
+  m_Name: SpellsPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1333063291
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333063290}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3150036926369449526}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1333063292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333063290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 425d92ad9c4409440992eec62a2cc21e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  templates:
+  - {fileID: 4477359506729327752, guid: 99f7043c51849e6479b0faa6e351f720, type: 3}
+  - {fileID: 3505723362421336106, guid: 107af3dfd11de9f45b25882c5544598e, type: 3}
+  - {fileID: 4039489050012869858, guid: d32f796ae4223594b806394fe67e497e, type: 3}
+  countObject: 3
+  container: {fileID: 0}
 --- !u!1 &1974217738
 GameObject:
   m_ObjectHideFlags: 0
@@ -501,6 +550,7 @@ Transform:
   - {fileID: 3150036925973916013}
   - {fileID: 3150036926974006783}
   - {fileID: 3150036927627099304}
+  - {fileID: 1333063291}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -589,7 +639,7 @@ MonoBehaviour:
   health: 20
   _target: {fileID: 0}
   spells:
-  - {fileID: 9203018462203506091, guid: 31d7963069ca4e24a96df2173083f56b, type: 3}
+  - {fileID: 4167088091820504161, guid: 6b4b87cbf623627448c2bbea2682c58c, type: 3}
   castPoint: {fileID: 3150036926974006783}
   dealyAfterAttack1: 0.35
   delayBeforeAttack1: 0.35

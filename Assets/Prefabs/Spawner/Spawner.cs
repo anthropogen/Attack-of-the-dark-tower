@@ -5,9 +5,11 @@ using UnityEngine.Events;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] private List<Wave> waves;
+
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private Player player;
+    [SerializeField] private List<Wave> _waves;
+    [SerializeField] private EnemiesPool enemiesPool;
     private List<Enemy> enemies;
     private Wave _currentWave;
     private int _currentWaveNumber=0;
@@ -18,6 +20,7 @@ public class Spawner : MonoBehaviour
     public UnityAction AllEntmyDied;
     private void Start()
     {
+
         SetWave(_currentWaveNumber);
         enemies = new List<Enemy>();
     }
@@ -37,7 +40,7 @@ public class Spawner : MonoBehaviour
         }
         if (_currentWave.Count<=_spawned)
         {
-            if (waves.Count>_currentWaveNumber+1)
+            if (_waves.Count>_currentWaveNumber+1)
             {
                 AllEnemySpawned?.Invoke();
             }
@@ -51,15 +54,18 @@ public class Spawner : MonoBehaviour
     {
         if (player != null)
         {
-            var enemy = Instantiate(_currentWave.Template, spawnPoint.position, spawnPoint.rotation, spawnPoint).GetComponent<Enemy>();
+            var enemy = enemiesPool.GetFreeObject(_currentWave.IndexTemplate);
+            enemy.transform.position = spawnPoint.position;
             enemy.Init(player);
             enemy.Death += OnEnemyDying;
             enemies.Add(enemy);
+            enemy.GetComponent<EnemyStateMachine>().Reset();
+            enemy.gameObject.SetActive(true);
         }
     }
     private void SetWave(int index)
     {
-        _currentWave = waves[index];
+        _currentWave = _waves[index];
         EnemyCountChanged(0, 1);
     }
     private void OnEnemyDying(Enemy enemy)
@@ -67,7 +73,7 @@ public class Spawner : MonoBehaviour
         enemy.Death -= OnEnemyDying;
         player.AddMoney(enemy.Reward);
         enemies.Remove(enemy);
-        if (_currentWaveNumber >= waves.Count - 1&&enemies.Count<1)
+        if (_currentWaveNumber >= _waves.Count - 1&&enemies.Count<1)
         {
             Debug.Log("All enemyes spawned");
             AllEntmyDied?.Invoke();
@@ -77,5 +83,10 @@ public class Spawner : MonoBehaviour
     {
        SetWave( ++_currentWaveNumber);
         _spawned = 0;
+    }
+
+    public void InitWaves(List<Wave> waves)
+    {
+        _waves = waves;
     }
 }

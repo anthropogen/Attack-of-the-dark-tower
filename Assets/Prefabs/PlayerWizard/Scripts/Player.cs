@@ -15,6 +15,7 @@ public class Player : Character
     [SerializeField] private float delayBeforeAttack2;
     [SerializeField] private float maxMana;
     [SerializeField] private float speedRegenMana;
+    [SerializeField] private SpellsPool spellsPool;
     private float _currentMana;
     private bool _IsAttacking;
     private int _currentSpellIndex=0;
@@ -25,6 +26,7 @@ public class Player : Character
     public event UnityAction<float, float> HealthChanged;
     public event UnityAction<float, float> ManaChanged;
     public event UnityAction CrystalChanged;
+    public event UnityAction PlayerDead;
    private void Start()
     {
         ChangeSpell(spells[_currentSpellIndex]);
@@ -77,7 +79,7 @@ public class Player : Character
    private IEnumerator Attack(float delayBeforeAttack1,float delayAfterAttack,Vector2 target)
     {
         yield return new WaitForSeconds(delayBeforeAttack1);
-        _currentSpell.Shoot(target, castPoint.position);
+        _currentSpell.Shoot(target, castPoint.position,spellsPool);
         yield return new WaitForSeconds(delayAfterAttack);
         _IsAttacking = false;
     }
@@ -88,6 +90,7 @@ public class Player : Character
         HealthChanged?.Invoke(_currentHealth, health);
         if (_currentHealth < 0)
         {
+            PlayerDead?.Invoke();
             Destroy(gameObject);
         }
     }

@@ -10,14 +10,14 @@ public class EnemyStateMachine : MonoBehaviour
     private Character _currentTarget;
     public Player Player => _targetPlayer;
     public State CurrentState => _currentState;
-    private void Start()
+    private void Start ()
     {
-        _currentTarget= _targetPlayer = GetComponent<Character>().Target;
-        Reset(firstState);
+        Reset();
     }
-    private void Reset(State startState)
+    public void Reset()
     {
-        _currentState = startState;
+        _currentTarget = _targetPlayer = GetComponent<Character>().Target;
+        _currentState = firstState;
         if (CurrentState!=null)
         {
             CurrentState.Enter(_currentTarget);

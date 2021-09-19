@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Explosion : MonoBehaviour
@@ -40,12 +39,8 @@ public class Explosion : MonoBehaviour
             }
         }
        yield return new WaitForSeconds(delayAfterExplode);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
-   /* private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawSphere(transform.position, radius);
-    }*/
+  
 }

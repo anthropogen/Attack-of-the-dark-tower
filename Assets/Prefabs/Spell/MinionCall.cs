@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class MinionCall : Spell
@@ -12,10 +11,15 @@ public class MinionCall : Spell
         _player = GetComponent<Player>();
        
     }
-    public override void Shoot(Vector3 target, Vector3 castPoint)
+    public override void Shoot(Vector3 target, Vector3 castPoint,SpellsPool pool)
     {
         Vector2 spawnPoint = new Vector2(target.x, spawnPointY);
-       var minion= Instantiate(template, spawnPoint,Quaternion.identity);
+        // var minion= Instantiate(template, spawnPoint,Quaternion.identity);
+        var minion = pool.GetFreeObject(IndexInPool).GetComponent<Minion>();
+        minion.transform.position = spawnPoint;
+        minion.transform.rotation = Quaternion.identity;
+        minion.gameObject.SetActive(true);
+        minion.GetComponent<EnemyStateMachine>().Reset();
         minion.Init(_player);
     }
 }

@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.Events;
 public class Enemy : Character
@@ -19,7 +18,7 @@ public class Enemy : Character
         if (health<0)
         {
             Death?.Invoke(this);
-            Destroy(gameObject);
+            this.gameObject.SetActive(false);
         }
     }
    

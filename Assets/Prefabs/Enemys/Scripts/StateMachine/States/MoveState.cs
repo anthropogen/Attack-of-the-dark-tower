@@ -21,11 +21,16 @@ public class MoveState : State
     }
     private void Update()
     {
+        
         if (Target!=null)
         {
             Vector2 pos = Vector2.MoveTowards(transform.position, Target.transform.position, speed * Time.deltaTime);
             pos.y = groundY;
             transform.position = pos;
+        }
+        else
+        {
+            Debug.Log("null player");
         }
     }
 }

@@ -50,6 +50,7 @@ MonoBehaviour:
   isByed: 0
   isProjectile: 1
   costMana: 1
+  indexInPool: 1
   damageRange: {x: 1, y: 3}
   speed: 15
   templateIceBall: {fileID: 3505723362421336106, guid: 107af3dfd11de9f45b25882c5544598e, type: 3}

@@ -10,6 +10,8 @@ public abstract class  Spell : MonoBehaviour
     [SerializeField] private bool isByed=false;
     [SerializeField] private bool isProjectile;
     [SerializeField] private float costMana;
+    [SerializeField] private int indexInPool;
+    public int IndexInPool => indexInPool;
     public string Label => label;
     public string DamageDescription => damageDescription;
     public int Price => price;
@@ -17,7 +19,7 @@ public abstract class  Spell : MonoBehaviour
     public float CostMana => costMana;
     public bool IsProjectile => isProjectile;
     public bool IsByed => isByed;
-    public abstract void Shoot(Vector3 target,Vector3 castPoint);
+    public abstract void Shoot(Vector3 target,Vector3 castPoint,SpellsPool pool);
     public void Buy()
     {
         isByed = true;
