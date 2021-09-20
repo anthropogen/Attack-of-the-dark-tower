@@ -157,8 +157,8 @@ MonoBehaviour:
   player: {fileID: 1110938767}
   _waves:
   - IndexTemplate: 0
-    Delay: 2
-    Count: 5
+    Delay: 1
+    Count: 3
   - IndexTemplate: 0
     Delay: 1
     Count: 5

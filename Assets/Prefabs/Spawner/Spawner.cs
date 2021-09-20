@@ -56,10 +56,11 @@ public class Spawner : MonoBehaviour
         {
             var enemy = enemiesPool.GetFreeObject(_currentWave.IndexTemplate);
             enemy.transform.position = spawnPoint.position;
+            enemy.ResetCharacter();
+            enemy.GetComponent<EnemyStateMachine>().Reset();
             enemy.Init(player);
             enemy.Death += OnEnemyDying;
             enemies.Add(enemy);
-            enemy.GetComponent<EnemyStateMachine>().Reset();
             enemy.gameObject.SetActive(true);
         }
     }

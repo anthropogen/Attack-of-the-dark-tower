@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstState: {fileID: 4039489050012869860}
-  isRight: 0
+  isRight: 1
 --- !u!114 &4039489050012869860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,6 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transitions:
+  - {fileID: 4039489050012869863}
   - {fileID: 4039489050012869863}
 --- !u!114 &4039489050012869863
 MonoBehaviour:

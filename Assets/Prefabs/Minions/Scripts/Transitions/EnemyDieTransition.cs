@@ -4,7 +4,7 @@ public class EnemyDieTransition : Transition
 {
     private void Update()
     {
-        if (Target==null)
+        if (Target.IsDeath)
         {
             NeedTransit = true;
         }

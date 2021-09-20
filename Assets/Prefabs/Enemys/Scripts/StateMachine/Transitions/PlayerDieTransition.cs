@@ -4,7 +4,7 @@ public class PlayerDieTransition: Transition
 {
     private void Update()
     {
-        if (Target==null)
+        if (Target.IsDeath)
         {
             var stateMachine = GetComponent<EnemyStateMachine>();
             stateMachine.ChangeTarget(stateMachine.Player);

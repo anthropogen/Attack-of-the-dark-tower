@@ -1,15 +1,15 @@
-
+using UnityEngine;
 
 public class TargetDieTransition : Transition
 {
    
   private  void Update()
     {
-        if (Target == null)
+        if (Target.IsDeath)
         {
           var stateMachine=  GetComponent<EnemyStateMachine>();
             stateMachine.ChangeTarget(stateMachine.Player);
-            if (stateMachine.Player!=null)
+            if (!stateMachine.Player.IsDeath)
             {
                 NeedTransit = true;
             }

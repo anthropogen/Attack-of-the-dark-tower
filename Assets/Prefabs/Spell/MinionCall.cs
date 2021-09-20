@@ -16,6 +16,7 @@ public class MinionCall : Spell
         Vector2 spawnPoint = new Vector2(target.x, spawnPointY);
         // var minion= Instantiate(template, spawnPoint,Quaternion.identity);
         var minion = pool.GetFreeObject(IndexInPool).GetComponent<Minion>();
+        minion.ResetCharacter();
         minion.transform.position = spawnPoint;
         minion.transform.rotation = Quaternion.identity;
         minion.gameObject.SetActive(true);

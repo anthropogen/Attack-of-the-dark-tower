@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstState: {fileID: 1953884297735355991}
-  isRight: 0
+  isRight: 1
 --- !u!114 &1953884297735355991
 MonoBehaviour:
   m_ObjectHideFlags: 0

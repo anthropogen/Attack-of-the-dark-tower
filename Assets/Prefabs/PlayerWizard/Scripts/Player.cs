@@ -30,15 +30,21 @@ public class Player : Character
    private void Start()
     {
         ChangeSpell(spells[_currentSpellIndex]);
-        _currentHealth = health;
-        _currentMana = maxMana;
+        ResetCharacter();
         HealthChanged?.Invoke(_currentHealth, health);
         ManaChanged?.Invoke(_currentMana, maxMana);
         CrystalChanged?.Invoke();
         _animator = GetComponent<Animator>();
-        _IsAttacking = false;
+        
         StartCoroutine(RegenerationMana());
         
+    }
+    public override void ResetCharacter()
+    {
+        _currentHealth = health;
+        _currentMana = maxMana;
+        _IsAttacking = false;
+        IsDeath = false;
     }
     
     private void Update()
@@ -90,6 +96,7 @@ public class Player : Character
         HealthChanged?.Invoke(_currentHealth, health);
         if (_currentHealth < 0)
         {
+            IsDeath = true;
             PlayerDead?.Invoke();
             Destroy(gameObject);
         }
@@ -136,4 +143,5 @@ public class Player : Character
     {
         _currentSpell = newCurrentSpell;
     }
+
 }

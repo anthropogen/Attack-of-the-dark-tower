@@ -16,6 +16,11 @@ public class EnemyStateMachine : MonoBehaviour
     }
     public void Reset()
     {
+        isRight = true;
+        if (_currentState!=null)
+        {
+            _currentState.Exit();
+        }
         _currentTarget = _targetPlayer = GetComponent<Character>().Target;
         _currentState = firstState;
         if (CurrentState!=null)
@@ -37,7 +42,7 @@ public class EnemyStateMachine : MonoBehaviour
        
             if (_currentTarget != null)
             {
-                if (transform.position.x > _currentTarget.transform.position.x && !isRight || transform.position.x < _currentTarget.transform.position.x && isRight)
+                if (transform.position.x < _currentTarget.transform.position.x && !isRight || transform.position.x > _currentTarget.transform.position.x && isRight)
                 {
                     Spin();
                 }
@@ -67,4 +72,5 @@ public class EnemyStateMachine : MonoBehaviour
         transform.Rotate(0, 180, 0);
         isRight = !isRight;
     }
+   
 }
