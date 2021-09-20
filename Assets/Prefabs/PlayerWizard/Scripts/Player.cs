@@ -16,12 +16,14 @@ public class Player : Character
     [SerializeField] private float maxMana;
     [SerializeField] private float speedRegenMana;
     [SerializeField] private SpellsPool spellsPool;
+    [SerializeField] private int level;
     private float _currentMana;
     private bool _IsAttacking;
     private int _currentSpellIndex=0;
     private Spell _currentSpell;
     private float _currentHealth;
     private Animator _animator;
+    public int Level => level;
     public int Crystal { get; private set; }
     public event UnityAction<float, float> HealthChanged;
     public event UnityAction<float, float> ManaChanged;
@@ -34,10 +36,8 @@ public class Player : Character
         HealthChanged?.Invoke(_currentHealth, health);
         ManaChanged?.Invoke(_currentMana, maxMana);
         CrystalChanged?.Invoke();
-        _animator = GetComponent<Animator>();
-        
-        StartCoroutine(RegenerationMana());
-        
+        _animator = GetComponent<Animator>();   
+        StartCoroutine(RegenerationMana()); 
     }
     public override void ResetCharacter()
     {

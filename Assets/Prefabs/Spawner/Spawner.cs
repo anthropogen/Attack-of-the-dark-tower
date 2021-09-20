@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using IJunior.TypedScenes;
 
-public class Spawner : MonoBehaviour
+public class Spawner : MonoBehaviour,ISceneLoadHandler<WavesConfiguration>
 {
 
     [SerializeField] private Transform spawnPoint;
@@ -89,5 +90,10 @@ public class Spawner : MonoBehaviour
     public void InitWaves(List<Wave> waves)
     {
         _waves = waves;
+    }
+
+    public void OnSceneLoaded(WavesConfiguration argument)
+    {
+        _waves = argument.Waves;
     }
 }
