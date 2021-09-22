@@ -144,4 +144,11 @@ public class Player : Character
         _currentSpell = newCurrentSpell;
     }
 
+   
+    public void Load(int level,int crystal)
+    {
+        this.level = level;
+        this.Crystal = crystal;
+        Debug.Log($"level:{Level} Crystal:{Crystal}");
+    }
 }

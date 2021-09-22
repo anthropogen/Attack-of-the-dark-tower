@@ -6,13 +6,11 @@ public class SceneLoader: MonoBehaviour
     [SerializeField] private WavesGenerator generator;
      private WavesConfiguration _configuration;
 
-    public void CurrentLevel()
-    {
-        GameLevel.Load(_configuration);
-    }
+    
 
-    public void NextLevel()
+    public void LoadLevel()
     {
+        Time.timeScale = 1;
         _configuration = generator.GetNewWavesConfig();
         GameLevel.Load(_configuration);
     }

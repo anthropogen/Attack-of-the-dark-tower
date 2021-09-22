@@ -18,7 +18,7 @@ public class Spawner : MonoBehaviour,ISceneLoadHandler<WavesConfiguration>
     private int _spawned;
     public UnityAction AllEnemySpawned;
     public UnityAction<float,float> EnemyCountChanged;
-    public UnityAction AllEntmyDied;
+    public UnityAction AllEnemyDied;
     private void Start()
     {
 
@@ -32,7 +32,7 @@ public class Spawner : MonoBehaviour,ISceneLoadHandler<WavesConfiguration>
             return;
         }
         _timeAfterLastSpawn += Time.deltaTime;
-        if (_timeAfterLastSpawn>_currentWave.Delay)
+        if (_timeAfterLastSpawn>_currentWave.Delay())
         {
             InstantiateEnemy();
             _spawned++;
@@ -55,7 +55,7 @@ public class Spawner : MonoBehaviour,ISceneLoadHandler<WavesConfiguration>
     {
         if (player != null)
         {
-            var enemy = enemiesPool.GetFreeObject(_currentWave.IndexTemplate);
+            var enemy = enemiesPool.GetFreeObject(_currentWave.GetTemplate());
             enemy.transform.position = spawnPoint.position;
             enemy.ResetCharacter();
             enemy.GetComponent<EnemyStateMachine>().Reset();
@@ -78,7 +78,7 @@ public class Spawner : MonoBehaviour,ISceneLoadHandler<WavesConfiguration>
         if (_currentWaveNumber >= _waves.Count - 1&&enemies.Count<1)
         {
             Debug.Log("All enemyes spawned");
-            AllEntmyDied?.Invoke();
+            AllEnemyDied?.Invoke();
         }
     }
     public void NextWave()
