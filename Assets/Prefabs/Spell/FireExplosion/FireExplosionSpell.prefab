@@ -51,6 +51,5 @@ MonoBehaviour:
   isProjectile: 0
   costMana: 1
   indexInPool: 0
-  explosionTemplate: {fileID: 4477359506729327752, guid: 99f7043c51849e6479b0faa6e351f720, type: 3}
-  explosionRadius: 0.7
+  explosionRadius: 1.2
   damage: 1

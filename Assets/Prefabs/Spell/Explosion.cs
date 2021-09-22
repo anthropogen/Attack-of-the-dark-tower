@@ -6,7 +6,6 @@ public class Explosion : MonoBehaviour
     [SerializeField] private float delayBeforeExplode;
     [SerializeField] private float delayAfterExplode;
     [SerializeField] private int layerNumber;
-    [SerializeField] private float radius;
 
     private void OnValidate()
     {
@@ -42,5 +41,5 @@ public class Explosion : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-  
+   
 }
