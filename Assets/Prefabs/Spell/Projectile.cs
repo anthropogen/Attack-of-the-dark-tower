@@ -4,6 +4,8 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     [SerializeField] private float delayAfterCollison;
+    [SerializeField] private int layerValue;
+    [SerializeField] private int secondLayerValue;
     private float _speed;
     private float _damage;
     private Vector3 _direction;
@@ -20,21 +22,21 @@ public class Projectile : MonoBehaviour
         _damage = damage;
         _direction = direction;
     }
-
-
     void Update()
     { 
         transform.position += _direction * Time.deltaTime * _speed;  
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
-        if (collision.TryGetComponent(out Enemy enemy))
+        if (collision.gameObject.layer == layerValue||collision.gameObject.layer==secondLayerValue)
         {
-            enemy.TakeDamage(_damage);
-            _speed = 0;
-            _animator.Play("Break");
-            StartCoroutine(Disable());
+            if (collision.TryGetComponent(out Character character))
+            {
+                character.TakeDamage(_damage);
+                _speed = 0;
+                _animator.Play("Break");
+                StartCoroutine(Disable());
+            }
         }
     }
     private IEnumerator Disable()

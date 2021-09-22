@@ -144,6 +144,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayAfterCollison: 0.25
+  layerValue: 6
+  secondLayerValue: 6
 --- !u!50 &3187330891265228649
 Rigidbody2D:
   serializedVersion: 4

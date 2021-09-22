@@ -182,7 +182,7 @@ MonoBehaviour:
   transitions:
   - {fileID: 4035778777707951719}
   - {fileID: 4035778777707951714}
-  speed: 2.5
+  speed: 1
   groundY: -3
 --- !u!114 &4035778777707951719
 MonoBehaviour:

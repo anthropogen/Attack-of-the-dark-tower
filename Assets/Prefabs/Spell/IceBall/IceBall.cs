@@ -16,8 +16,6 @@ public class IceBall : Spell
         Vector2 dirRotate =  castPoint-target;
         float angle = Mathf.Atan2(dirRotate.y, dirRotate.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-
-        // var projectile =  Instantiate(templateIceBall,castPoint,rotation);
         var projectile = pool.GetFreeObject(IndexInPool).GetComponent<Projectile>(); 
         projectile.transform.position = castPoint;
         projectile.transform.rotation = rotation;

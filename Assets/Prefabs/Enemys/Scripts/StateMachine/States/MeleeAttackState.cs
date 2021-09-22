@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class MeleeAttackState : AttackState
 {
-    private Animator _animator;
+    
     protected override void Attack(Character target)
     {
         if (target!=null)
@@ -13,9 +13,6 @@ public class MeleeAttackState : AttackState
         }
     }
 
-    private void Awake()
-    {
-        _animator = GetComponent<Animator>();
-    }
+    
    
 }
