@@ -14,8 +14,7 @@ public class SpellBook : MonoBehaviour
         for (int i = 0; i < spells.Count; i++)
         {
             AddItem(spells[i]);
-        }
-        gameObject.SetActive(false);
+        }  
     }
     private void AddItem(Spell spell)
     {

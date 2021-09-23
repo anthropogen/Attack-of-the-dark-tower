@@ -21,15 +21,15 @@ public class WavesGenerator : MonoBehaviour
     private int GetCount(int level)
     {
         int count = 3;
-        if (level > 5)
+        if (level > 3)
         {
             count = Random.Range(3, 5);
         }
-        if (level > 10)
+        if (level > 8)
         {
             count = Random.Range(5, 7);
         }
-        if (level > 20)
+        if (level > 15)
         {
             count = Random.Range(6, 10);
         }
@@ -42,21 +42,21 @@ public class WavesGenerator : MonoBehaviour
         float maxDelay = 2;
         var indexes = new List<int>();
         indexes.Add(0);
-        if (level > 5)
+        if (level > 3)
         {
             minDelay = 0.8f;
             maxDelay = 2;
             enemiesCount = Random.Range(5, 15);
             indexes.Add(1);
         }
-        if (level > 10)
+        if (level > 8)
         {
             minDelay = 0.7f;
             maxDelay = 1.5f;
             enemiesCount = Random.Range(10, 20);
             indexes.Add(2);
         }
-         if(level > 20)
+         if(level > 15)
         {
             minDelay = 0.5f;
             maxDelay = 1f;

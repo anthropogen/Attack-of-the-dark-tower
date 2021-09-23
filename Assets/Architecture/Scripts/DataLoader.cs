@@ -4,22 +4,20 @@ using UnityEngine;
 public class DataLoader : MonoBehaviour
 {
     [SerializeField] private Player player;
-    [SerializeField] private Spawner spawner;
     private string savePath;
-    private int version = 1;
+    private int version = 2;
     private void OnEnable()
     {
-        if (spawner!=null)
+        if (player!=null)
         {
-            spawner.AllEnemyDied += SavePlayerData;
+            player.LevelUped += SavePlayerData;
         }
-        
     }
     private void OnDisable()
     {
-        if (spawner != null)
+        if (player!=null)
         {
-            spawner.AllEnemyDied -= SavePlayerData;
+            player.LevelUped -= SavePlayerData;
         }
     }
     private void Awake()
@@ -32,6 +30,7 @@ public class DataLoader : MonoBehaviour
         using (var writer = new BinaryWriter(File.Open(savePath, FileMode.OpenOrCreate)))
         {
             writer.Write(version);
+            writer.Write(player.SpeedRegenMana);
             writer.Write(player.Level);
             writer.Write(player.Crystal);
             writer.Write(player.MaxMana);
@@ -40,21 +39,27 @@ public class DataLoader : MonoBehaviour
     }
     public int LoadPlayerData()
     {
-        int level=0,crystal = 0,maxMana=5,version=0;
+        int level = 0, crystal = 0, version=0;
+       float maxMana = 5,speedRegenMana=1.2f;
         if (File.Exists(savePath))
         {
             using (var reader = new BinaryReader(File.Open(savePath, FileMode.Open)))
             {
                 version = reader.ReadInt32();
+                if (version>1)
+                {
+                    speedRegenMana = reader.ReadSingle();
+                }
                 level = reader.ReadInt32();
                 crystal = reader.ReadInt32();
-                maxMana = reader.ReadInt32();
+                maxMana = reader.ReadSingle();
             }
         }
         if (player!=null)
         {
-            player.Load(level, crystal,maxMana);
+            player.Load(level, crystal,maxMana,speedRegenMana);
         }
+        Debug.Log($"level{level},crystal{crystal},maxMana{maxMana},regen{speedRegenMana}/s");
         return level;
     }
 }

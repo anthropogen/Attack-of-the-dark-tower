@@ -29,11 +29,13 @@ public class Player : Character
     private Animator _animator;
     public int Level => level;
     public float MaxMana => maxMana;
+    public float SpeedRegenMana => speedRegenMana;
     public int Crystal { get; private set; }
     public event UnityAction<float, float> HealthChanged;
     public event UnityAction<float, float> ManaChanged;
     public event UnityAction CrystalChanged;
     public event UnityAction PlayerDead;
+    public event UnityAction LevelUped;
    private void Start()
     {
         ChangeSpell(spells[_currentSpellIndex]);
@@ -90,6 +92,12 @@ public class Player : Character
     {
         level++;
         maxMana += 0.2f;
+        if (speedRegenMana>0.5)
+        {
+            speedRegenMana -= 0.02f;
+        }
+        LevelUped?.Invoke();
+        Debug.Log("LevelUp");
     }
     public void AddSpell(Spell spell)
     {
@@ -122,7 +130,8 @@ public class Player : Character
         {
             IsDeath = true;
             PlayerDead?.Invoke();
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+           // Destroy(gameObject);
         }
     }
     private IEnumerator RegenerationMana()
@@ -169,10 +178,11 @@ public class Player : Character
     }
 
    
-    public void Load(int level,int crystal,int maxMana)
+    public void Load(int level,int crystal,float maxMana,float speedRegenMana)
     {
         this.maxMana = maxMana;
         this.level = level;
         this.Crystal = crystal;
+        this.speedRegenMana = speedRegenMana;
     }
 }

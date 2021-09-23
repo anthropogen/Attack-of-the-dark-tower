@@ -33,6 +33,7 @@ public class Sounds : MonoBehaviour
     private void OnPlayerDead()
     {
         PlaySound(lose);
+        Debug.Log("PlayLose");
     }
     private void OnAllEnemiesDied()
     {

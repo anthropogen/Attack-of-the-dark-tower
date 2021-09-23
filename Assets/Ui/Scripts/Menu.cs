@@ -5,9 +5,9 @@ using UnityEngine;
 public class Menu : MonoBehaviour
 {
    public void OpenPanel(RectTransform panel)
-    {
+    {   
         panel.gameObject.SetActive(true);
-        Time.timeScale = 0;
+         Time.timeScale = 0;
     }
     public void ClosePanel(RectTransform panel)
     {

@@ -156,7 +156,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -2.0491028, y: -0.49500084}
+  m_AnchoredPosition: {x: -2.0491028, y: -0.49499893}
   m_SizeDelta: {x: -62.3364, y: -35.3479}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &62219169
@@ -371,8 +371,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0.000015259}
+  m_AnchoredPosition: {x: -4.1841125, y: -1.0031013}
+  m_SizeDelta: {x: 8.3681, y: 22.067}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &156533383
 MonoBehaviour:
@@ -1545,10 +1545,10 @@ RectTransform:
   m_Father: {fileID: 342407221}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.36983335, y: 0.03614815}
-  m_AnchorMax: {x: 0.629, y: 0.12777779}
-  m_AnchoredPosition: {x: 1, y: 38}
-  m_SizeDelta: {x: 2, y: 1}
+  m_AnchorMin: {x: 0.36600003, y: 0.072333336}
+  m_AnchorMax: {x: 0.6276111, y: 0.19722223}
+  m_AnchoredPosition: {x: 2.5, y: -1.8113403}
+  m_SizeDelta: {x: 5, y: -0.6226}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1933198253
 MonoBehaviour:
@@ -1701,7 +1701,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  spawner: {fileID: 0}
 --- !u!114 &1976491758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1746,10 +1745,10 @@ RectTransform:
   m_Father: {fileID: 342407221}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.374, y: 0.101}
-  m_AnchorMax: {x: 0.61200005, y: 0.18425927}
-  m_AnchoredPosition: {x: 4.5, y: 50}
-  m_SizeDelta: {x: -257, y: -40}
+  m_AnchorMin: {x: 0.3753889, y: 0.011222223}
+  m_AnchorMax: {x: 0.61477786, y: 0.09455556}
+  m_AnchoredPosition: {x: 0, y: 4}
+  m_SizeDelta: {x: -260, y: -40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2014220035
 MonoBehaviour:
@@ -1798,7 +1797,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 69.4
+  m_fontSize: 69.45
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
