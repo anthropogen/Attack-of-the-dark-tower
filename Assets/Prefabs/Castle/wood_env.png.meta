@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2aed9116c7c7ed44cb5a2b34a7b1ec97
+guid: 1afef5423c3c2bd4e8bacbb428f350eb
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -49,7 +49,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -109,12 +109,12 @@ TextureImporter:
       name: wood_env_0
       rect:
         serializedVersion: 2
-        x: 64
-        y: 8
-        width: 81
-        height: 14
-      alignment: 9
-      pivot: {x: 0.5, y: 0.74929374}
+        x: 63
+        y: 9
+        width: 82
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

@@ -1,7 +1,6 @@
 
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class SpellBook : MonoBehaviour
 {
@@ -16,12 +15,18 @@ public class SpellBook : MonoBehaviour
         {
             AddItem(spells[i]);
         }
+        gameObject.SetActive(false);
     }
     private void AddItem(Spell spell)
     {
         var view = Instantiate(template, itemContainer.transform);
         view.SellButtonClick += OnBuyButtonClick;
         view.Renderer(spell);
+        if (spell.IsByed)
+        {
+            view.SellButtonClick -= OnBuyButtonClick;
+            player.AddSpell(spell);
+        }
     }
 
     private void OnBuyButtonClick(Spell spell, SpellView view)

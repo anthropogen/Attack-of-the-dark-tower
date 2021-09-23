@@ -38,6 +38,10 @@ public class Projectile : MonoBehaviour
                 StartCoroutine(Disable());
             }
         }
+        if (collision.gameObject.GetComponent<Destroer>())
+        {
+            gameObject.SetActive(false);
+        }
     }
     private IEnumerator Disable()
     {

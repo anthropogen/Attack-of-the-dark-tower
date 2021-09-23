@@ -17,6 +17,9 @@ public class Player : Character
     [SerializeField] private float speedRegenMana;
     [SerializeField] private SpellsPool spellsPool;
     [SerializeField] private int level;
+    [SerializeField] private AudioSource source;
+    [SerializeField] private AudioClip soundAttack1;
+    [SerializeField] private AudioClip soundAttack2;
     private float _currentMana;
     private bool _IsAttacking;
     private int _currentSpellIndex=0;
@@ -57,12 +60,14 @@ public class Player : Character
                 _IsAttacking = true;
                 if (_currentSpell.IsProjectile)
                 {
-                    _animator.SetTrigger("Attack2");
+                    _animator?.SetTrigger("Attack2");
+                    source?.PlayOneShot(soundAttack2);
                     StartCoroutine(Attack(delayBeforeAttack2, dealyAfterAttack2, clickPosition));
                 }
                 else
                 {
-                    _animator.SetTrigger("Attack1");
+                    source?.PlayOneShot(soundAttack1);
+                    _animator?.SetTrigger("Attack1");
                     StartCoroutine(Attack(delayBeforeAttack1, dealyAfterAttack1, clickPosition));
                 }
                 _currentMana -= _currentSpell.CostMana;
@@ -70,11 +75,16 @@ public class Player : Character
             }  
         }
     }
+   
+    public void AddSpell(Spell spell)
+    {
+        spells?.Add(spell); 
+    }
    public void BuySpell(Spell newSpell )
     {
         Crystal -= newSpell.Price;
         CrystalChanged?.Invoke();
-        spells.Add(newSpell);
+        AddSpell(newSpell);
     }
     public void AddMoney(int reward)
     {
@@ -85,7 +95,7 @@ public class Player : Character
    private IEnumerator Attack(float delayBeforeAttack1,float delayAfterAttack,Vector2 target)
     {
         yield return new WaitForSeconds(delayBeforeAttack1);
-        _currentSpell.Shoot(target, castPoint.position,spellsPool);
+        _currentSpell?.Shoot(target, castPoint.position,spellsPool);
         yield return new WaitForSeconds(delayAfterAttack);
         _IsAttacking = false;
     }
@@ -149,6 +159,5 @@ public class Player : Character
     {
         this.level = level;
         this.Crystal = crystal;
-        Debug.Log($"level:{Level} Crystal:{Crystal}");
     }
 }

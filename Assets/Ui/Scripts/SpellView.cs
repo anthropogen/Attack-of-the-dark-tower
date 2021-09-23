@@ -39,6 +39,7 @@ public class SpellView : MonoBehaviour
         label.text = spell.Label;
         damage.text = spell.DamageDescription;
         costMana.text = spell.CostMana.ToString();
+        TryLockedSpell();    
     }
     private void OnButtonClick()
     {

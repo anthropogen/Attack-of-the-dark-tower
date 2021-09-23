@@ -1,18 +1,23 @@
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class SoundVolume : MonoBehaviour
 {
     [SerializeField] private Slider slider;
+    [SerializeField] private AudioMixer mixer;
     private float _volume;
     private void Start()
     {
+        slider.minValue = -80;
+        slider.maxValue = 20; 
        SetVolume(LoadVolume());
         slider.value = LoadVolume();
     }
     public void SetVolume(float value)
     {
         _volume = value;
+        mixer.SetFloat("VolumeMain", value);
         SaveVolume();
     }
     private void SaveVolume()
