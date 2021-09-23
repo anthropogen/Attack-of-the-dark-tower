@@ -8331,6 +8331,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 584272514}
     - target: {fileID: 3150036926369449515, guid: 7c2a2faa0a75c804aa21afb8f3008e19, type: 3}
+      propertyPath: spawner
+      value: 
+      objectReference: {fileID: 44752105}
+    - target: {fileID: 3150036926369449515, guid: 7c2a2faa0a75c804aa21afb8f3008e19, type: 3}
       propertyPath: spellsPool
       value: 
       objectReference: {fileID: 1333063292}

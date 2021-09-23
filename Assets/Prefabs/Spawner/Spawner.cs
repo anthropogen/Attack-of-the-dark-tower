@@ -21,9 +21,10 @@ public class Spawner : MonoBehaviour,ISceneLoadHandler<WavesConfiguration>
     public UnityAction AllEnemyDied;
     private void Start()
     {
-
-        SetWave(_currentWaveNumber);
+        _currentWaveNumber = 0;
         enemies = new List<Enemy>();
+        SetWave(_currentWaveNumber);
+
     }
     private void Update()
     {
@@ -77,7 +78,6 @@ public class Spawner : MonoBehaviour,ISceneLoadHandler<WavesConfiguration>
         enemies.Remove(enemy);
         if (_currentWaveNumber >= _waves.Count - 1&&enemies.Count<1)
         {
-            Debug.Log("All enemyes spawned");
             AllEnemyDied?.Invoke();
         }
     }
@@ -95,5 +95,6 @@ public class Spawner : MonoBehaviour,ISceneLoadHandler<WavesConfiguration>
     public void OnSceneLoaded(WavesConfiguration argument)
     {
         _waves = argument.Waves;
+        SetWave(_currentWaveNumber);
     }
 }

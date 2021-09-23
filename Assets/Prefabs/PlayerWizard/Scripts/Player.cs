@@ -20,6 +20,7 @@ public class Player : Character
     [SerializeField] private AudioSource source;
     [SerializeField] private AudioClip soundAttack1;
     [SerializeField] private AudioClip soundAttack2;
+    [SerializeField] private Spawner spawner;
     private float _currentMana;
     private bool _IsAttacking;
     private int _currentSpellIndex=0;
@@ -27,6 +28,7 @@ public class Player : Character
     private float _currentHealth;
     private Animator _animator;
     public int Level => level;
+    public float MaxMana => maxMana;
     public int Crystal { get; private set; }
     public event UnityAction<float, float> HealthChanged;
     public event UnityAction<float, float> ManaChanged;
@@ -41,6 +43,14 @@ public class Player : Character
         CrystalChanged?.Invoke();
         _animator = GetComponent<Animator>();   
         StartCoroutine(RegenerationMana()); 
+    }
+    private void OnEnable()
+    {
+        spawner.AllEnemyDied += UpLevel;
+    }
+    private void OnDisable()
+    {
+        spawner.AllEnemyDied -= UpLevel;
     }
     public override void ResetCharacter()
     {
@@ -75,7 +85,12 @@ public class Player : Character
             }  
         }
     }
-   
+  
+    private void UpLevel()
+    {
+        level++;
+        maxMana += 0.2f;
+    }
     public void AddSpell(Spell spell)
     {
         spells?.Add(spell); 
@@ -89,7 +104,6 @@ public class Player : Character
     public void AddMoney(int reward)
     {
         Crystal += reward;
-        Debug.Log(Crystal);
         CrystalChanged?.Invoke();
     }
    private IEnumerator Attack(float delayBeforeAttack1,float delayAfterAttack,Vector2 target)
@@ -155,8 +169,9 @@ public class Player : Character
     }
 
    
-    public void Load(int level,int crystal)
+    public void Load(int level,int crystal,int maxMana)
     {
+        this.maxMana = maxMana;
         this.level = level;
         this.Crystal = crystal;
     }
