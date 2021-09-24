@@ -64,7 +64,8 @@ public class Player : Character
     
     private void Update()
     {
-       if(Input.GetMouseButtonDown(0)&&!EventSystem.current.IsPointerOverGameObject()&&_currentSpell!=null)
+      
+      if(Input.GetMouseButtonDown(0)&&!EventSystem.current.IsPointerOverGameObject()&&_currentSpell!=null)
         {
             if (_IsAttacking==false&&_currentMana>_currentSpell.CostMana)
             {
@@ -88,6 +89,7 @@ public class Player : Character
         }
     }
   
+    
     private void UpLevel()
     {
         level++;

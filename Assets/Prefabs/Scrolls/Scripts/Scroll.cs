@@ -1,8 +1,9 @@
 
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-[RequireComponent(typeof (BoxCollider2D))]
-public abstract class Scroll : MonoBehaviour
+
+public abstract class Scroll : MonoBehaviour,IPointerDownHandler
 {
     protected Player Player { get; private set; }
     public void Init(Player player)
@@ -11,7 +12,8 @@ public abstract class Scroll : MonoBehaviour
     }
     public abstract void MouseDownAction();
 
-    private void OnMouseDown()
+   
+  public void OnPointerDown(PointerEventData eventData)
     {
         MouseDownAction();
     }

@@ -7,7 +7,7 @@ public abstract class Pool<T> : MonoBehaviour where T:MonoBehaviour
     [SerializeField] private T[] templates;
     [SerializeField] private int countObject;
     [SerializeField] private Transform container;
-    private List<T>[] objects;
+    protected List<T>[] objects;
 
     private void Start()
     {

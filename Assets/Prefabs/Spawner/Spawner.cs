@@ -13,6 +13,7 @@ public class Spawner : MonoBehaviour,ISceneLoadHandler<WavesConfiguration>
     [SerializeField] private EnemiesPool enemiesPool;
     [SerializeField] private ScrollsPool scrollsPool;
     [SerializeField] [Range(0,100)] private int chanceSpawnScroll;
+    private Camera mainCam;
     private List<Enemy> enemies;
     private Wave _currentWave;
     private int _currentWaveNumber=0;
@@ -26,7 +27,7 @@ public class Spawner : MonoBehaviour,ISceneLoadHandler<WavesConfiguration>
         _currentWaveNumber = 0;
         enemies = new List<Enemy>();
         SetWave(_currentWaveNumber);
-
+        mainCam = Camera.main;
     }
     private void Update()
     {
@@ -90,11 +91,13 @@ public class Spawner : MonoBehaviour,ISceneLoadHandler<WavesConfiguration>
         bool spawn = Random.Range(0, 100) > chanceSpawnScroll;
         if (spawn)
         {
+
+             var scroll = scrollsPool.GetRandomObject();
+              Vector3 pos = mainCam.WorldToScreenPoint(new Vector3(spawnPos.x,spawnPos.y,0));
+              scroll.transform.position = pos;
+              scroll.Init(player);
+              scroll.gameObject.SetActive(true);
             
-            var scroll = scrollsPool.GetRandomObject();
-            scroll.transform.position = spawnPos;
-            scroll.Init(player);
-            scroll.gameObject.SetActive(true);
         }
     }
     public void NextWave()
