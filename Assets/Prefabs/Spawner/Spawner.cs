@@ -11,6 +11,8 @@ public class Spawner : MonoBehaviour,ISceneLoadHandler<WavesConfiguration>
     [SerializeField] private Player player;
     [SerializeField] private List<Wave> _waves;
     [SerializeField] private EnemiesPool enemiesPool;
+    [SerializeField] private ScrollsPool scrollsPool;
+    [SerializeField] [Range(0,100)] private int chanceSpawnScroll;
     private List<Enemy> enemies;
     private Wave _currentWave;
     private int _currentWaveNumber=0;
@@ -64,6 +66,7 @@ public class Spawner : MonoBehaviour,ISceneLoadHandler<WavesConfiguration>
             enemy.Death += OnEnemyDying;
             enemies.Add(enemy);
             enemy.gameObject.SetActive(true);
+            enemy.UpdateHealthBar();
         }
     }
     private void SetWave(int index)
@@ -74,11 +77,24 @@ public class Spawner : MonoBehaviour,ISceneLoadHandler<WavesConfiguration>
     private void OnEnemyDying(Enemy enemy)
     {
         enemy.Death -= OnEnemyDying;
+        TryGetScroll(enemy.transform.position);
         player.AddMoney(enemy.Reward);
         enemies.Remove(enemy);
         if (_currentWaveNumber >= _waves.Count - 1&&enemies.Count<1)
         {
             AllEnemyDied?.Invoke();
+        }
+    }
+    private void  TryGetScroll(Vector2 spawnPos)
+    {
+        bool spawn = Random.Range(0, 100) > chanceSpawnScroll;
+        if (spawn)
+        {
+            
+            var scroll = scrollsPool.GetRandomObject();
+            scroll.transform.position = spawnPos;
+            scroll.Init(player);
+            scroll.gameObject.SetActive(true);
         }
     }
     public void NextWave()

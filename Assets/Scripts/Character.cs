@@ -1,10 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.Events;
 using UnityEngine;
 
 public abstract class Character : MonoBehaviour
 {
-   [SerializeField] protected float health;
+   [SerializeField] protected float maxHealth;
    [SerializeField] protected Player _target;
     public bool IsDeath { get; protected set; }
     public Player Target => _target;

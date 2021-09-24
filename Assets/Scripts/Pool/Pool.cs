@@ -50,4 +50,9 @@ public abstract class Pool<T> : MonoBehaviour where T:MonoBehaviour
         }
         return null;
     }
+    public T GetRandomObject()
+    {
+        int index = Random.Range(0,objects.Length);
+        return  GetFreeObject(index);
+    }
 }

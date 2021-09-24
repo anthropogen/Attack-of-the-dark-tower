@@ -40,7 +40,7 @@ public class Player : Character
     {
         ChangeSpell(spells[_currentSpellIndex]);
         ResetCharacter();
-        HealthChanged?.Invoke(_currentHealth, health);
+        HealthChanged?.Invoke(_currentHealth, maxHealth);
         ManaChanged?.Invoke(_currentMana, maxMana);
         CrystalChanged?.Invoke();
         _animator = GetComponent<Animator>();   
@@ -56,7 +56,7 @@ public class Player : Character
     }
     public override void ResetCharacter()
     {
-        _currentHealth = health;
+        _currentHealth = maxHealth;
         _currentMana = maxMana;
         _IsAttacking = false;
         IsDeath = false;
@@ -109,10 +109,30 @@ public class Player : Character
         CrystalChanged?.Invoke();
         AddSpell(newSpell);
     }
+    public void AddMana(int addedMana)
+    {
+        _currentMana += addedMana;
+        if (_currentMana>maxMana)
+        {
+            _currentMana = maxMana;
+        }
+        ManaChanged?.Invoke(_currentMana, maxMana);
+        Debug.Log("added mana");
+    }
     public void AddMoney(int reward)
     {
         Crystal += reward;
         CrystalChanged?.Invoke();
+    }
+    public void AddHealth(int health)
+    {
+        _currentHealth += health;
+        if (_currentHealth>maxHealth)
+        {
+            _currentHealth = maxHealth;
+        }
+        HealthChanged?.Invoke(_currentHealth, maxHealth);
+        Debug.Log("Added Health");
     }
    private IEnumerator Attack(float delayBeforeAttack1,float delayAfterAttack,Vector2 target)
     {
@@ -125,13 +145,12 @@ public class Player : Character
     public override void TakeDamage(float damage)
     {
         _currentHealth -= damage;
-        HealthChanged?.Invoke(_currentHealth, health);
+        HealthChanged?.Invoke(_currentHealth, maxHealth);
         if (_currentHealth < 0)
         {
             IsDeath = true;
             PlayerDead?.Invoke();
             gameObject.SetActive(false);
-           // Destroy(gameObject);
         }
     }
     private IEnumerator RegenerationMana()

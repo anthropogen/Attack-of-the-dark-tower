@@ -18,7 +18,7 @@ public class Minion : Character
 
     public override void ResetCharacter()
     {
-        _currentHealth = health;
+        _currentHealth = maxHealth;
         IsDeath = false;
     }
 

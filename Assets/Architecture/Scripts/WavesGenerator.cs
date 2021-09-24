@@ -42,21 +42,21 @@ public class WavesGenerator : MonoBehaviour
         float maxDelay = 2;
         var indexes = new List<int>();
         indexes.Add(0);
-        if (level > 3)
+        if (level > 2)
         {
             minDelay = 0.8f;
             maxDelay = 2;
             enemiesCount = Random.Range(5, 15);
             indexes.Add(1);
         }
-        if (level > 8)
+        if (level > 4)
         {
             minDelay = 0.7f;
             maxDelay = 1.5f;
             enemiesCount = Random.Range(10, 20);
             indexes.Add(2);
         }
-         if(level > 15)
+         if(level > 8)
         {
             minDelay = 0.5f;
             maxDelay = 1f;
