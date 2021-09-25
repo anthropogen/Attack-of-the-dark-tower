@@ -159,7 +159,7 @@ MonoBehaviour:
   _waves: []
   enemiesPool: {fileID: 44752107}
   scrollsPool: {fileID: 44752108}
-  chanceSpawnScroll: 30
+  chanceSpawnScroll: 15
 --- !u!4 &44752106
 Transform:
   m_ObjectHideFlags: 0
@@ -2316,6 +2316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1110938767}
+  spellBook: {fileID: 348916484}
 --- !u!114 &511510122
 MonoBehaviour:
   m_ObjectHideFlags: 0

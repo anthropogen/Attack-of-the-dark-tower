@@ -24,5 +24,9 @@ public abstract class  Spell : MonoBehaviour
     {
         isByed = true;
     }
-    
+    public void Load(bool isBought)
+    {
+        isByed = isBought;
+    }
+
 }

@@ -88,7 +88,7 @@ public class Spawner : MonoBehaviour,ISceneLoadHandler<WavesConfiguration>
     }
     private void  TryGetScroll(Vector2 spawnPos)
     {
-        bool spawn = Random.Range(0, 100) > chanceSpawnScroll;
+        bool spawn = Random.Range(0, 100) < chanceSpawnScroll;
         if (spawn)
         {
 
