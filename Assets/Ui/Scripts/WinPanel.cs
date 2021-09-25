@@ -5,6 +5,7 @@ public class WinPanel : MonoBehaviour
 {
     [SerializeField] private RectTransform panel;
     [SerializeField] private Spawner spawner;
+    [SerializeField] private RectTransform scrollContainer;
     private void OnEnable()
     {
         spawner.AllEnemyDied += OpenPanel;
@@ -16,6 +17,11 @@ public class WinPanel : MonoBehaviour
     public void OpenPanel()
     {
         Time.timeScale = 0;
+        CloseScrolls();
         panel.gameObject.SetActive(true);
+    }
+    private void CloseScrolls()
+    {
+        scrollContainer.gameObject.SetActive(false);
     }
 }

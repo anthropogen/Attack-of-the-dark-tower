@@ -210,8 +210,6 @@ MonoBehaviour:
   - {fileID: 7338415244239070037, guid: d7a68bcdb91e87e478bbbd5522e2c83a, type: 3}
   countObject: 2
   container: {fileID: 1709764450}
-  player: {fileID: 1110938767}
-  spawner: {fileID: 44752105}
 --- !u!1 &56566169
 GameObject:
   m_ObjectHideFlags: 0
@@ -1714,6 +1712,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1110938767}
   panel: {fileID: 687574918}
+  scrollContainer: {fileID: 1709764450}
 --- !u!114 &348916482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1728,6 +1727,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 1084367689}
   spawner: {fileID: 44752105}
+  scrollContainer: {fileID: 1709764450}
 --- !u!114 &348916483
 MonoBehaviour:
   m_ObjectHideFlags: 0
