@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 1894964447099418744}
   - component: {fileID: 1894964447099418745}
   - component: {fileID: 1894964447099418750}
-  - component: {fileID: 1894964447099418751}
   - component: {fileID: 632588963144061146}
+  - component: {fileID: 1463379440}
+  - component: {fileID: 1463379439}
   m_Layer: 0
   m_Name: DeathTornadoProjectile
   m_TagString: Untagged
@@ -104,22 +105,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!70 &1894964447099418751
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1894964447099418749}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.016423702, y: 0.147748}
-  m_Size: {x: 4.051174, y: 5.9362154}
-  m_Direction: 0
 --- !u!114 &632588963144061146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,4 +118,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   layerValue: 6
-  secondLayerValue: 6
+  radiusDamage: 2.5
+--- !u!50 &1463379440
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894964447099418749}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!61 &1463379439
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894964447099418749}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.16767359, y: -0.12575495}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 9.6, y: 9.6}
+    newSize: {x: 9.6, y: 9.6}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.234441, y: 5.995016}
+  m_EdgeRadius: 0

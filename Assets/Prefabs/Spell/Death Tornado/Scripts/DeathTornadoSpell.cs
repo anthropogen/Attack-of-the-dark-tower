@@ -10,11 +10,11 @@ public class DeathTornadoSpell : Spell
     public override void Shoot(Vector3 target, Vector3 castPoint, SpellsPool pool, Player player = null)
     {
 
-        Vector2 direction = (target - castPoint).normalized;
-        Vector2 directionMove = new Vector2(direction.x, spawnPointY);
+        
+        
         var tornado = pool.GetFreeObject(IndexInPool).GetComponent<Tornado>();
         tornado.transform.position =   new Vector3(castPoint.x,spawnPointY) ;
-        tornado.Init(speed, damage, timeBetweenDamage, directionMove);
+        tornado.Init(speed, damage, timeBetweenDamage, Vector3.left);
         tornado.gameObject.SetActive(true);
     }
 }
