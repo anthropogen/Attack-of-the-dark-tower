@@ -6,10 +6,13 @@ public class SpawnState : State
     
     [SerializeField] private Vector3 spawnPoint;
     private Animator _animator;
-    private void Start()
+    private void Awake()
+    {
+       _animator = GetComponent<Animator>();
+    }
+    private void OnEnable()
     {
         transform.position = spawnPoint;
-       _animator = GetComponent<Animator>();
         _animator.SetTrigger("Spawn");
     }
 }

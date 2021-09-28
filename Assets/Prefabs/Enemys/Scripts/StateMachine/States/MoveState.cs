@@ -5,7 +5,6 @@ public class MoveState : State
 {
     [SerializeField] private float speed;
     [SerializeField] private float groundY;
-    private float currentPositionX;
     private Animator _animator;
     private void Awake()
     {

@@ -17,7 +17,7 @@ public class Wave
     }
     public int GetTemplate()
     {
-      return  Random.Range(0, _templateIndexes.Count);
+        return _templateIndexes[Random.Range(0, _templateIndexes.Count)];
     }
     public Wave (List<int> indexes,int count, float maxDelay,float minDelay)
     {

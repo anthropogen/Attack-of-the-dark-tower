@@ -182,6 +182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetState: {fileID: 4039489050012869865}
   distanceView: 14
+  distanceOnY: 1.5
   layerNumber: 6
 --- !u!114 &4039489050012869864
 MonoBehaviour:

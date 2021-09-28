@@ -484,6 +484,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetState: {fileID: 5222511077427815050}
   distanceView: 7
+  distanceOnY: 7
   layerNumber: 7
 --- !u!114 &1624915671
 MonoBehaviour:
@@ -498,7 +499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetState: {fileID: 5222511077427815050}
-  timeDurationSpawn: 1
+  timeDurationSpawn: 1.6
 --- !u!114 &1624915672
 MonoBehaviour:
   m_ObjectHideFlags: 0

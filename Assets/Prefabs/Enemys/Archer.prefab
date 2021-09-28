@@ -460,6 +460,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetState: {fileID: 2441779197996721516}
   distanceView: 15
+  distanceOnY: 3
   layerNumber: 7
 --- !u!1 &3797396918909813043
 GameObject:

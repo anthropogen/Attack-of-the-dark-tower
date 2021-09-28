@@ -54,10 +54,10 @@ public class Player : Character
     private void UpLevel()
     {
         level++;
-        maxMana += 0.2f;
+        maxMana += 0.15f;
         if (speedRegenMana>0.5)
         {
-            speedRegenMana -= 0.02f;
+            speedRegenMana -= 0.01f;
         }
         LevelUped?.Invoke();
         Debug.Log("LevelUp");
@@ -90,7 +90,7 @@ public class Player : Character
     {
         Crystal -= newSpell.Price;
         CrystalChanged?.Invoke();
-       Attacker.AddSpell(newSpell);
+        Attacker.AddSpell(newSpell);
     }
     public void AddHealth(int health)
     {
@@ -128,9 +128,7 @@ public class Player : Character
             ManaChanged?.Invoke(_currentMana, maxMana);
         }
     }
-  
 
-   
     public void Load(PlayerSaveData saveData)
     {
         this.maxMana = saveData.MaxMana;

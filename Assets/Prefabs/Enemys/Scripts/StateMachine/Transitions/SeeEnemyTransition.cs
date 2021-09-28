@@ -4,6 +4,7 @@ using UnityEngine;
 public class SeeEnemyTransition : Transition
 {
     [SerializeField] private float distanceView;
+    [SerializeField] private float distanceOnY;
     [SerializeField] private int layerNumber;
     private void OnValidate()
     {
@@ -21,10 +22,13 @@ public class SeeEnemyTransition : Transition
             {
                 if (hit.collider.gameObject.layer==layerNumber)
                 {
-                    if (hit.transform.gameObject.TryGetComponent<Character>(out Character target))
+                    if (Mathf.Abs(hit.transform.position.y - transform.position.y)< distanceOnY)
                     {
-                        GetComponent<EnemyStateMachine>().ChangeTarget(target);
-                        NeedTransit = true;
+                        if (hit.transform.gameObject.TryGetComponent<Character>(out Character target))
+                        {
+                            GetComponent<EnemyStateMachine>().ChangeTarget(target);
+                            NeedTransit = true;
+                        }
                     }
                 }
             }              

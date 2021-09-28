@@ -27,7 +27,7 @@ public class Attacker : MonoBehaviour
         _animator = GetComponent<Animator>();
     }
     private void Update()
-    {
+    { 
         if (Input.touchCount==1)
         {
             Touch touch=Input.GetTouch(0);
@@ -56,29 +56,6 @@ public class Attacker : MonoBehaviour
                 }
             }
         }
-
-        /*
-        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject() && _currentSpell != null)
-        {
-            if (_IsAttacking == false && player.CurrentMana > _currentSpell.CostMana)
-            {
-                Vector2 clickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                _IsAttacking = true;
-                if (_currentSpell.IsProjectile)
-                {
-                    _animator?.SetTrigger("Attack2");
-                    source?.PlayOneShot(soundAttack2);
-                    StartCoroutine(Attack(delayBeforeAttack2, dealyAfterAttack2, clickPosition));
-                }
-                else
-                {
-                    source?.PlayOneShot(soundAttack1);
-                    _animator?.SetTrigger("Attack1");
-                    StartCoroutine(Attack(delayBeforeAttack1, dealyAfterAttack1, clickPosition));
-                }
-                player.GetMana(_currentSpell.CostMana);
-            }
-        }*/
     }
   
     private IEnumerator Attack(float delayBeforeAttack1, float delayAfterAttack, Vector2 target)
@@ -90,7 +67,7 @@ public class Attacker : MonoBehaviour
     }
     public void AddSpell(Spell spell)
     {
-        spells?.Add(spell);
+        spells.Add(spell);
     }
    
     public void NextSpell()

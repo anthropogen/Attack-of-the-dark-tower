@@ -61,6 +61,7 @@ public class Spawner : MonoBehaviour,ISceneLoadHandler<WavesConfiguration>
         {
             var enemy = enemiesPool.GetFreeObject(_currentWave.GetTemplate());
             enemy.transform.position = spawnPoint.position;
+            enemy.transform.rotation = Quaternion.identity;
             enemy.ResetCharacter();
             enemy.GetComponent<EnemyStateMachine>().Reset();
             enemy.Init(player);
