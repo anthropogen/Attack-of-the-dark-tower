@@ -73,7 +73,7 @@ public class Spawner : MonoBehaviour,ISceneLoadHandler<WavesConfiguration>
     private void SetWave(int index)
     {
         _currentWave = _waves[index];
-        EnemyCountChanged(0, 1);
+        EnemyCountChanged?.Invoke(0, 1);
     }
     private void OnEnemyDying(Enemy enemy)
     {

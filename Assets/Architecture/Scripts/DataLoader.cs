@@ -1,12 +1,12 @@
 using System.IO;
 using UnityEngine;
 using System.Collections.Generic;
+using System.Runtime.Serialization.Formatters.Binary;
 public class DataLoader : MonoBehaviour
 {
     [SerializeField] private Player player;
     [SerializeField] private SpellBook spellBook;
     private string savePath;
-    private const int Version = 1;
     private void OnEnable()
     {
         if (player!=null)
@@ -28,51 +28,40 @@ public class DataLoader : MonoBehaviour
     }
     public void SavePlayerData()
     {
-        using (var writer = new BinaryWriter(File.Open(savePath, FileMode.OpenOrCreate)))
+        Dictionary<string, bool> purchasedSpells=new Dictionary<string, bool>();
+        for (int i = 0; i < spellBook.Spells.Count; i++)
         {
-            writer.Write(Version);
-            writer.Write(player.Level);
-            writer.Write(player.Crystal);
-            writer.Write(player.MaxMana);
-            writer.Write(player.SpeedRegenMana);
-            writer.Write(spellBook.Spells.Count);
-            for (int i = 0; i < spellBook.Spells.Count; i++)
-            {
-                writer.Write(spellBook.Spells[i].IsByed);
-            }
-
+            purchasedSpells.Add(spellBook.Spells[i].Label, spellBook.Spells[i].IsByed);
+        }
+        PlayerSaveData saveData = new PlayerSaveData(player.Level,player.Crystal,player.MaxMana,player.SpeedRegenMana,purchasedSpells);
+        using (FileStream file =File.Create(savePath))
+        {
+            new BinaryFormatter().Serialize(file, saveData);
         }
     }
-    public int LoadPlayerData()
+    public PlayerSaveData LoadPlayerData()
     {
-        int level = 0, crystal = 0, version=0;
-        float maxMana = 5,speedRegenMana=1.2f;
-        List<bool> boughtSpells=new List<bool>();
+        PlayerSaveData saveData;
         if (File.Exists(savePath))
         {
-            using (var reader = new BinaryReader(File.Open(savePath, FileMode.Open)))
+            using (FileStream file = File.Open(savePath, FileMode.Open))
             {
-                version = reader.ReadInt32(); 
-                level = reader.ReadInt32();
-                crystal = reader.ReadInt32();
-                maxMana = reader.ReadSingle();
-                speedRegenMana = reader.ReadSingle();
-                int length = reader.ReadInt32();
-                for (int i = 0; i < length; i++)
-                {
-                   boughtSpells.Add(reader.ReadBoolean());
-                }
+                var dataLoaded = new BinaryFormatter().Deserialize(file);
+                saveData = (PlayerSaveData)dataLoaded;
             }
+        }
+        else
+        {
+            saveData = new PlayerSaveData();
         }
         if (player!=null)
         {
-            player.Load(level, crystal,maxMana,speedRegenMana);
+            player.Load(saveData);
         }
         if (spellBook!=null)
         {
-            spellBook.Load(boughtSpells);
+            spellBook.Load(saveData);
         }
-        Debug.Log($"level{level},crystal{crystal},maxMana{maxMana},regen{speedRegenMana}/s");
-        return level;
+        return saveData;
     }
 }

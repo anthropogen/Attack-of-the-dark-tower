@@ -8,7 +8,7 @@ public class WavesGenerator : MonoBehaviour
 
     public WavesConfiguration GetNewWavesConfig()
     {
-        int level = loader.LoadPlayerData();
+        int level = loader.LoadPlayerData().Level;
         var waves = new List<Wave>();
         for (int i = 0; i < GetCount(level); i++)
         {

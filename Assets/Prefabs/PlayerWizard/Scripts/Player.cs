@@ -199,11 +199,11 @@ public class Player : Character
     }
 
    
-    public void Load(int level,int crystal,float maxMana,float speedRegenMana)
+    public void Load(PlayerSaveData saveData)
     {
-        this.maxMana = maxMana;
-        this.level = level;
-        this.Crystal = crystal;
-        this.speedRegenMana = speedRegenMana;
+        this.maxMana = saveData.MaxMana;
+        this.level =saveData.Level;
+        this.Crystal = saveData.Crystal;
+        this.speedRegenMana =saveData.SpeedRegenMana;
     }
 }

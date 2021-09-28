@@ -17,12 +17,23 @@ public class SpellBook : MonoBehaviour
             AddItem(spells[i]);
         }  
     }*/
-    public void Load(List<bool> boughtSpell)
+    public void Load(PlayerSaveData saveData)
     {
-        for (int i = 0; i < boughtSpell.Count; i++)
+        if (saveData.PurchasedSpells!=null)
         {
-            spells[i].Load(boughtSpell[i]);
+            for (int i = 0; i <spells.Count; i++)
+            {
+                foreach ( var spell in saveData.PurchasedSpells)
+                {
+                    if (spell.Key==spells[i].Label)
+                    {
+                        Debug.Log($"{spell.Key}-{spell.Value}");
+                        spells[i].Load(spell.Value);
+                    }
+                }
+            }
         }
+       
         for (int i = 0; i < spells.Count; i++)
         {
             AddItem(spells[i]);
