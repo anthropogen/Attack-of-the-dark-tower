@@ -1,11 +1,12 @@
 
 using UnityEngine;
-
+using UnityEngine.Events;
 
 public class Minion : Character
 {
     [SerializeField]  private Player _player;
     private float _currentHealth;
+    public event UnityAction<Minion> MinionDead;
     private void Start()
     {
         ResetCharacter();
@@ -27,7 +28,8 @@ public class Minion : Character
        _currentHealth -= damage;
         if (_currentHealth<=0)
         {
-            IsDeath = true;
+           IsDeath = true;
+            MinionDead?.Invoke(this);
            gameObject.SetActive(false);
         }
     }

@@ -5,7 +5,7 @@ public class FireBallSpell : Spell
 {
     [SerializeField] private Vector2 damageRange;
     [SerializeField] private float speed;
-    public override void Shoot(Vector3 target, Vector3 castPoint, SpellsPool pool)
+    public override void Shoot(Vector3 target, Vector3 castPoint, SpellsPool pool,Player player)
     {
         Vector2 direction = (target - castPoint).normalized;
         Vector2 dirRotate = target-castPoint;

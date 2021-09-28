@@ -51,5 +51,4 @@ MonoBehaviour:
   isProjectile: 0
   costMana: 3
   indexInPool: 2
-  template: {fileID: 4039489050012869858, guid: d32f796ae4223594b806394fe67e497e, type: 3}
   spawnPointY: -2.4

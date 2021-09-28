@@ -19,7 +19,7 @@ public abstract class  Spell : MonoBehaviour
     public float CostMana => costMana;
     public bool IsProjectile => isProjectile;
     public bool IsByed => isByed;
-    public abstract void Shoot(Vector3 target,Vector3 castPoint,SpellsPool pool);
+    public abstract void Shoot(Vector3 target,Vector3 castPoint,SpellsPool pool,Player player=null);
     public void Buy()
     {
         isByed = true;

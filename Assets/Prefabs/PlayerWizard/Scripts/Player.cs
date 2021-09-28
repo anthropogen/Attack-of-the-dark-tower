@@ -7,28 +7,19 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Animator))]
 public class Player : Character
 {
-    [SerializeField] private List<Spell> spells;
-    [SerializeField] private Transform castPoint;
-    [SerializeField] private float dealyAfterAttack1;
-    [SerializeField] private float delayBeforeAttack1;
-    [SerializeField] private float dealyAfterAttack2;
-    [SerializeField] private float delayBeforeAttack2;
     [SerializeField] private float maxMana;
     [SerializeField] private float speedRegenMana;
-    [SerializeField] private SpellsPool spellsPool;
     [SerializeField] private int level;
-    [SerializeField] private AudioSource source;
-    [SerializeField] private AudioClip soundAttack1;
-    [SerializeField] private AudioClip soundAttack2;
     [SerializeField] private Spawner spawner;
+    [SerializeField] private Attacker attacker;
+    [SerializeField] private int maxMinionCount;
+    private int _minionCurrentCount;
     private float _currentMana;
-    private bool _IsAttacking;
-    private int _currentSpellIndex=0;
-    private Spell _currentSpell;
     private float _currentHealth;
-    private Animator _animator;
+    public Attacker Attacker => attacker;
     public int Level => level;
     public float MaxMana => maxMana;
+    public float CurrentMana => _currentMana;
     public float SpeedRegenMana => speedRegenMana;
     public int Crystal { get; private set; }
     public event UnityAction<float, float> HealthChanged;
@@ -38,12 +29,11 @@ public class Player : Character
     public event UnityAction LevelUped;
    private void Start()
     {
-        ChangeSpell(spells[_currentSpellIndex]);
+
         ResetCharacter();
         HealthChanged?.Invoke(_currentHealth, maxHealth);
         ManaChanged?.Invoke(_currentMana, maxMana);
-        CrystalChanged?.Invoke();
-        _animator = GetComponent<Animator>();   
+        CrystalChanged?.Invoke();   
         StartCoroutine(RegenerationMana()); 
     }
     private void OnEnable()
@@ -58,38 +48,9 @@ public class Player : Character
     {
         _currentHealth = maxHealth;
         _currentMana = maxMana;
-        _IsAttacking = false;
         IsDeath = false;
-    }
-    
-    private void Update()
-    {
-      
-      if(Input.GetMouseButtonDown(0)&&!EventSystem.current.IsPointerOverGameObject()&&_currentSpell!=null)
-        {
-            if (_IsAttacking==false&&_currentMana>_currentSpell.CostMana)
-            {
-                Vector2 clickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                _IsAttacking = true;
-                if (_currentSpell.IsProjectile)
-                {
-                    _animator?.SetTrigger("Attack2");
-                    source?.PlayOneShot(soundAttack2);
-                    StartCoroutine(Attack(delayBeforeAttack2, dealyAfterAttack2, clickPosition));
-                }
-                else
-                {
-                    source?.PlayOneShot(soundAttack1);
-                    _animator?.SetTrigger("Attack1");
-                    StartCoroutine(Attack(delayBeforeAttack1, dealyAfterAttack1, clickPosition));
-                }
-                _currentMana -= _currentSpell.CostMana;
-                ManaChanged?.Invoke(_currentMana, maxMana);
-            }  
-        }
-    }
-  
-    
+        _minionCurrentCount = 0;
+    }  
     private void UpLevel()
     {
         level++;
@@ -101,17 +62,16 @@ public class Player : Character
         LevelUped?.Invoke();
         Debug.Log("LevelUp");
     }
-    public void AddSpell(Spell spell)
+ public void GetMana(float mana)
     {
-        spells?.Add(spell); 
+        if (mana>_currentMana)
+        {
+            return;
+        }
+        _currentMana -= mana;
+        ManaChanged?.Invoke(_currentMana, maxMana);
     }
-   public void BuySpell(Spell newSpell )
-    {
-        Crystal -= newSpell.Price;
-        CrystalChanged?.Invoke();
-        AddSpell(newSpell);
-    }
-    public void AddMana(int addedMana)
+    public void AddMana(float addedMana)
     {
         _currentMana += addedMana;
         if (_currentMana>maxMana)
@@ -126,6 +86,12 @@ public class Player : Character
         Crystal += reward;
         CrystalChanged?.Invoke();
     }
+    public void BuySpell(Spell newSpell)
+    {
+        Crystal -= newSpell.Price;
+        CrystalChanged?.Invoke();
+       Attacker.AddSpell(newSpell);
+    }
     public void AddHealth(int health)
     {
         _currentHealth += health;
@@ -136,13 +102,7 @@ public class Player : Character
         HealthChanged?.Invoke(_currentHealth, maxHealth);
         Debug.Log("Added Health");
     }
-   private IEnumerator Attack(float delayBeforeAttack1,float delayAfterAttack,Vector2 target)
-    {
-        yield return new WaitForSeconds(delayBeforeAttack1);
-        _currentSpell?.Shoot(target, castPoint.position,spellsPool);
-        yield return new WaitForSeconds(delayAfterAttack);
-        _IsAttacking = false;
-    }
+
 
     public override void TakeDamage(float damage)
     {
@@ -168,35 +128,7 @@ public class Player : Character
             ManaChanged?.Invoke(_currentMana, maxMana);
         }
     }
-    public void NextSpell()
-    {
-
-        if (_currentSpellIndex==spells.Count-1)
-        {
-            _currentSpellIndex = 0;
-        }
-        else
-        {
-            _currentSpellIndex++;
-        }
-        ChangeSpell(spells[_currentSpellIndex]);
-    }
-    public void PreviousSpell()
-    {
-        if (_currentSpellIndex==0)
-        {
-            _currentSpellIndex = spells.Count - 1;
-        }
-        else
-        {
-            _currentSpellIndex--;
-        }
-        ChangeSpell(spells[_currentSpellIndex]);
-    }    
-    public void ChangeSpell(Spell newCurrentSpell)
-    {
-        _currentSpell = newCurrentSpell;
-    }
+  
 
    
     public void Load(PlayerSaveData saveData)
@@ -205,5 +137,22 @@ public class Player : Character
         this.level =saveData.Level;
         this.Crystal = saveData.Crystal;
         this.speedRegenMana =saveData.SpeedRegenMana;
+    }
+    public bool CanCallMinion()
+    {
+        if (_minionCurrentCount<maxMinionCount)
+        {
+            return true;
+        }
+        return false;
+    }
+    public void AddMinion()
+    {
+        _minionCurrentCount++;
+    }
+    public void OnMinionDead(Minion minion)
+    {
+        _minionCurrentCount--;
+        minion.MinionDead -= OnMinionDead;
     }
 }

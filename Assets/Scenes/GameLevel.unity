@@ -1313,7 +1313,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.46423423, y: 0.83517206}
   m_AnchorMax: {x: 0.60073256, y: 0.95800006}
-  m_AnchoredPosition: {x: 7, y: 1.8760376}
+  m_AnchoredPosition: {x: 7, y: 1.8760986}
   m_SizeDelta: {x: 13.772202, y: 4.5098}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &342735426
@@ -1468,7 +1468,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2.0744934, y: 0}
+  m_AnchoredPosition: {x: 2.074524, y: 0}
   m_SizeDelta: {x: -40.1083, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &342867243
@@ -1610,7 +1610,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
 --- !u!114 &348916477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1964,7 +1964,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 4.386017, y: 0}
+  m_AnchoredPosition: {x: 4.3859863, y: 0}
   m_SizeDelta: {x: -0.0187, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &359487129
@@ -2752,6 +2752,30 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &584272515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584272513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11225e4c04508424b96d256b613b5f4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1110938767}
+  spells:
+  - {fileID: 7675735343915436349, guid: 014a063c85ee8eb45bf8fde44674d4a8, type: 3}
+  castPoint: {fileID: 628412032}
+  dealyAfterAttack1: 0.35
+  delayBeforeAttack1: 0.35
+  dealyAfterAttack2: 0.35
+  delayBeforeAttack2: 0.35
+  source: {fileID: 584272514}
+  soundAttack1: {fileID: 8300000, guid: 1682be7bc3123409d91a7dcea2cd1f29, type: 3}
+  soundAttack2: {fileID: 8300000, guid: 9ae32f8e1a94c486c9929faca77ff03b, type: 3}
+  spellsPool: {fileID: 1333063292}
 --- !u!61 &584272517
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3056,6 +3080,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 616134053}
   m_CullTransparentMesh: 1
+--- !u!4 &628412032 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3150036926974006783, guid: 7c2a2faa0a75c804aa21afb8f3008e19, type: 3}
+  m_PrefabInstance: {fileID: 3150036927477633700}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &628963682
 GameObject:
   m_ObjectHideFlags: 0
@@ -3297,7 +3326,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2.0744934, y: 0}
+  m_AnchoredPosition: {x: 2.074463, y: 0}
   m_SizeDelta: {x: -40.1083, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &738485989
@@ -3504,7 +3533,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.06874193, y: 0.3625}
   m_AnchorMax: {x: 0.9341291, y: 0.6125}
-  m_AnchoredPosition: {x: 1.5911865, y: 1.7040997}
+  m_AnchoredPosition: {x: 1.5911865, y: 1.7041016}
   m_SizeDelta: {x: -6.6731987, y: -1.1236992}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &865414962
@@ -4647,7 +4676,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.63742185, y: 0.83517206}
   m_AnchorMax: {x: 0.8067498, y: 0.95800006}
-  m_AnchoredPosition: {x: 4.550598, y: 1.7937622}
+  m_AnchoredPosition: {x: 4.550537, y: 1.7938232}
   m_SizeDelta: {x: -19.258392, y: 5.1945}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1125726391
@@ -6177,7 +6206,7 @@ Transform:
   m_Children:
   - {fileID: 1929598339}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1675765102
 GameObject:
@@ -8240,7 +8269,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: 0, y: 0.53290176}
+  m_AnchoredPosition: {x: 0, y: 0.53289795}
   m_SizeDelta: {x: 0, y: 18.1162}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2047825495
@@ -8682,6 +8711,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 44752105}
     - target: {fileID: 3150036926369449515, guid: 7c2a2faa0a75c804aa21afb8f3008e19, type: 3}
+      propertyPath: attacker
+      value: 
+      objectReference: {fileID: 584272515}
+    - target: {fileID: 3150036926369449515, guid: 7c2a2faa0a75c804aa21afb8f3008e19, type: 3}
       propertyPath: maxHealth
       value: 20
       objectReference: {fileID: 0}
@@ -8698,12 +8731,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 9ae32f8e1a94c486c9929faca77ff03b, type: 3}
     - target: {fileID: 3150036926369449515, guid: 7c2a2faa0a75c804aa21afb8f3008e19, type: 3}
+      propertyPath: maxMinionCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3150036926369449515, guid: 7c2a2faa0a75c804aa21afb8f3008e19, type: 3}
       propertyPath: spells.Array.data[0]
       value: 
       objectReference: {fileID: 7675735343915436349, guid: 014a063c85ee8eb45bf8fde44674d4a8, type: 3}
     - target: {fileID: 3150036926369449526, guid: 7c2a2faa0a75c804aa21afb8f3008e19, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3150036926369449526, guid: 7c2a2faa0a75c804aa21afb8f3008e19, type: 3}
       propertyPath: m_LocalPosition.x

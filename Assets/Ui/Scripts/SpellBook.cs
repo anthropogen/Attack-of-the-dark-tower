@@ -47,7 +47,7 @@ public class SpellBook : MonoBehaviour
         if (spell.IsByed)
         {
             view.SellButtonClick -= OnBuyButtonClick;
-            player.AddSpell(spell);
+            player.Attacker.AddSpell(spell);
         }
     }
 
