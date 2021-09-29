@@ -6,30 +6,27 @@ public class SoundVolume : MonoBehaviour
 {
     [SerializeField] private Slider slider;
     [SerializeField] private AudioMixer mixer;
-    private float _volume;
     private void Start()
     {
-        slider.minValue = -70;
+        slider.minValue = -50;
         slider.maxValue = 10; 
-       SetVolume(LoadVolume());
         slider.value = LoadVolume();
     }
     public void SetVolume(float value)
     {
-        _volume = value;
         mixer.SetFloat("VolumeMain", value);
-        SaveVolume();
+        SaveVolume(value);
     }
-    private void SaveVolume()
-    {
-        PlayerPrefs.SetFloat("Volume", _volume);
-        PlayerPrefs.Save();
+    private void SaveVolume(float value)
+    { 
+        PlayerPrefs.SetFloat("Volume", value);
+        PlayerPrefs.Save();    
     }
     private float LoadVolume()
     {
         if (PlayerPrefs.HasKey("Volume"))
         {
-           return PlayerPrefs.GetFloat("Volume");
+            return PlayerPrefs.GetFloat("Volume");
         }
         return 1;
     }
