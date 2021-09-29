@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   label: Call Flying Eye
   damageDescription: 1
-  price: 1
+  price: 250
   icon: {fileID: -2278566297644842510, guid: 3338ba0b2059c9743bbbab600e218346, type: 3}
   isByed: 0
   isProjectile: 0

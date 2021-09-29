@@ -8,7 +8,7 @@ public class BornState : State
     
     private void Start()
     {
-        source.Play();
+         source.Play();
         _animator = GetComponent<Animator>();
         _animator.Play("Spawn");
     }

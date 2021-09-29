@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 422090240}
   - component: {fileID: 422090242}
   - component: {fileID: 422090241}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ManaBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 604424236}
   - component: {fileID: 604424238}
   - component: {fileID: 604424237}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,7 +190,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1333063291}
   - component: {fileID: 1333063292}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SpellsPool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -227,6 +227,9 @@ MonoBehaviour:
   - {fileID: 4477359506729327752, guid: 99f7043c51849e6479b0faa6e351f720, type: 3}
   - {fileID: 3505723362421336106, guid: 107af3dfd11de9f45b25882c5544598e, type: 3}
   - {fileID: 4039489050012869858, guid: d32f796ae4223594b806394fe67e497e, type: 3}
+  - {fileID: 644870431094509384, guid: 8ed97cf12297d8e49a96a6c3127aa74b, type: 3}
+  - {fileID: 5603847030845247080, guid: 22c8e3c321fc8d1499a92688334fa479, type: 3}
+  - {fileID: 632588963144061146, guid: 84e5b583087e89c42b4a3acf800be5ae, type: 3}
   countObject: 3
   container: {fileID: 0}
 --- !u!1 &1974217738
@@ -240,7 +243,7 @@ GameObject:
   - component: {fileID: 1974217739}
   - component: {fileID: 1974217741}
   - component: {fileID: 1974217740}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -313,7 +316,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2009664938}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -351,7 +354,7 @@ GameObject:
   - component: {fileID: 3150036925973916013}
   - component: {fileID: 3150036925973916015}
   - component: {fileID: 3150036925973916014}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -453,7 +456,7 @@ GameObject:
   - component: {fileID: 3150036926055190741}
   - component: {fileID: 3150036926055190743}
   - component: {fileID: 3150036926055190742}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -529,7 +532,10 @@ GameObject:
   - component: {fileID: 3150036926369449525}
   - component: {fileID: 3150036926369449524}
   - component: {fileID: 3150036926369449515}
-  m_Layer: 0
+  - component: {fileID: 584272517}
+  - component: {fileID: 584272514}
+  - component: {fileID: 584272515}
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -636,17 +642,160 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ccec9b76d082144aa383a723db975c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 20
+  maxHealth: 2000
   _target: {fileID: 0}
+  maxMana: 5
+  speedRegenMana: 1.2
+  level: 1
+  spawner: {fileID: 0}
+  attacker: {fileID: 584272515}
+  maxMinionCount: 5
+--- !u!61 &584272517
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3150036926369449514}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.13310432, y: -0.21296585}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.62, y: 3.8}
+    newSize: {x: 4.62, y: 3.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.8930969, y: 1.7235825}
+  m_EdgeRadius: 0
+--- !u!82 &584272514
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3150036926369449514}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 3633049334068408003, guid: 0b5eb9501e22d964ba470ef14af3ba28, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &584272515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3150036926369449514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11225e4c04508424b96d256b613b5f4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 3150036926369449515}
   spells:
   - {fileID: 4167088091820504161, guid: 6b4b87cbf623627448c2bbea2682c58c, type: 3}
   castPoint: {fileID: 3150036926974006783}
   dealyAfterAttack1: 0.35
   delayBeforeAttack1: 0.35
-  dealyAfterAttack2: 0.3
-  delayBeforeAttack2: 0.3
-  maxMana: 5
-  speedRegenMana: 1.2
+  dealyAfterAttack2: 0.35
+  delayBeforeAttack2: 0.35
+  source: {fileID: 584272514}
+  soundAttack1: {fileID: 8300000, guid: 9ae32f8e1a94c486c9929faca77ff03b, type: 3}
+  soundAttack2: {fileID: 8300000, guid: f9134e48d634d9045831ddf1298fa1b6, type: 3}
+  spellsPool: {fileID: 1333063292}
 --- !u!1 &3150036926776597511
 GameObject:
   m_ObjectHideFlags: 0
@@ -656,7 +805,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3150036926776597504}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -692,7 +841,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3150036926974006783}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CastPoint
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -724,7 +873,7 @@ GameObject:
   - component: {fileID: 3150036927014360156}
   - component: {fileID: 3150036927014360158}
   - component: {fileID: 3150036927014360157}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -800,7 +949,7 @@ GameObject:
   - component: {fileID: 3150036927627099307}
   - component: {fileID: 3150036927627099306}
   - component: {fileID: 3150036927627099305}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -900,7 +1049,7 @@ GameObject:
   - component: {fileID: 3150036928078879741}
   - component: {fileID: 3150036928078879743}
   - component: {fileID: 3150036928078879742}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HealtBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}

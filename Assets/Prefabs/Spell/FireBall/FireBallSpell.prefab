@@ -51,5 +51,5 @@ MonoBehaviour:
   isProjectile: 1
   costMana: 1
   indexInPool: 3
-  damageRange: {x: 1, y: 2}
+  damageRange: {x: 0.7, y: 1.5}
   speed: 15

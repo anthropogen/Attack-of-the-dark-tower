@@ -9,7 +9,7 @@ public class SoundVolume : MonoBehaviour
     private float _volume;
     private void Start()
     {
-        slider.minValue = -80;
+        slider.minValue = -70;
         slider.maxValue = 10; 
        SetVolume(LoadVolume());
         slider.value = LoadVolume();

@@ -45,13 +45,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   label: Death Tornado
   damageDescription: 1/sec
-  price: 1
-  icon: {fileID: 111770193693135506, guid: f0233811a70bc5444bc60fb2c636e80a, type: 3}
+  price: 450
+  icon: {fileID: 6757484833679384127, guid: ad31360f57e434d4f9e5a4b15cd61505, type: 3}
   isByed: 0
   isProjectile: 0
   costMana: 6
   indexInPool: 5
   speed: 3
-  damage: 0.1
-  spawnPointY: -0.58
+  damage: 0.15
+  spawnPointY: -1
   timeBetweenDamage: 0.1

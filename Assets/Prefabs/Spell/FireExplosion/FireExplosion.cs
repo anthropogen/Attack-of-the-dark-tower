@@ -5,7 +5,6 @@ public class FireExplosion : Spell
 {
     [SerializeField] private float explosionRadius;
     [SerializeField] private float damage;
-    [SerializeField] private AudioSource source;
    
     public override void Shoot(Vector3 target, Vector3 castPoint,SpellsPool pool,Player player)
     {
@@ -14,7 +13,6 @@ public class FireExplosion : Spell
         explosion.transform.position = pos;
         explosion.transform.rotation = Quaternion.identity;
         explosion.gameObject.SetActive(true);
-       explosion.InitExplode(explosionRadius,damage);
-        source.Play();
+        explosion.InitExplode(explosionRadius,damage);
     }
 }

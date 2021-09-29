@@ -6,6 +6,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] private float delayAfterCollison;
     [SerializeField] private int layerValue;
     [SerializeField] private int secondLayerValue;
+    [SerializeField] private AudioSource source;
     private float _speed;
     private float _damage;
     private Vector3 _direction;
@@ -45,6 +46,7 @@ public class Projectile : MonoBehaviour
     }
     private IEnumerator Disable()
     {
+        source?.Play();
         yield return new WaitForSeconds(delayAfterCollison);
         gameObject.SetActive(false);
     }

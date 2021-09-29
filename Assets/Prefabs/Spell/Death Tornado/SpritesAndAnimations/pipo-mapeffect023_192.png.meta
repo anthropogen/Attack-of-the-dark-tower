@@ -1,67 +1,67 @@
 fileFormatVersion: 2
-guid: f0233811a70bc5444bc60fb2c636e80a
+guid: ad31360f57e434d4f9e5a4b15cd61505
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2507889340269012385
-    second: pipo-mapeffect022_192_0
+      213: -8481026924057671450
+    second: pipo-mapeffect023_192_0
   - first:
-      213: -2562553747139264873
-    second: pipo-mapeffect022_192_1
+      213: 8249131382769577473
+    second: pipo-mapeffect023_192_1
   - first:
-      213: -1295194290040806283
-    second: pipo-mapeffect022_192_2
+      213: -1916463496549857919
+    second: pipo-mapeffect023_192_2
   - first:
-      213: 9222922134631405701
-    second: pipo-mapeffect022_192_3
+      213: 8849503533397671149
+    second: pipo-mapeffect023_192_3
   - first:
-      213: 8881577608002151824
-    second: pipo-mapeffect022_192_4
+      213: 4697283289970605930
+    second: pipo-mapeffect023_192_4
   - first:
-      213: 8511988046462422321
-    second: pipo-mapeffect022_192_5
+      213: 2679339709234695950
+    second: pipo-mapeffect023_192_5
   - first:
-      213: 1314178872101113554
-    second: pipo-mapeffect022_192_6
+      213: -3296584150590163149
+    second: pipo-mapeffect023_192_6
   - first:
-      213: -1931215907970207903
-    second: pipo-mapeffect022_192_7
+      213: -2651181841750015843
+    second: pipo-mapeffect023_192_7
   - first:
-      213: -6398404321705745066
-    second: pipo-mapeffect022_192_8
+      213: 5692545843489478098
+    second: pipo-mapeffect023_192_8
   - first:
-      213: -1758158379990693535
-    second: pipo-mapeffect022_192_9
+      213: 158234841554907846
+    second: pipo-mapeffect023_192_9
   - first:
-      213: -1486594926458507769
-    second: pipo-mapeffect022_192_10
+      213: 3307254073895254039
+    second: pipo-mapeffect023_192_10
   - first:
-      213: 4108733554806461645
-    second: pipo-mapeffect022_192_11
+      213: 6757484833679384127
+    second: pipo-mapeffect023_192_11
   - first:
-      213: -7506571542468475961
-    second: pipo-mapeffect022_192_12
+      213: 3392261015419893266
+    second: pipo-mapeffect023_192_12
   - first:
-      213: -1751724250386041813
-    second: pipo-mapeffect022_192_13
+      213: -4861322969726616208
+    second: pipo-mapeffect023_192_13
   - first:
-      213: 111770193693135506
-    second: pipo-mapeffect022_192_14
+      213: -6509114115554825616
+    second: pipo-mapeffect023_192_14
   - first:
-      213: -7481627914601547156
-    second: pipo-mapeffect022_192_15
+      213: -5745366793713627240
+    second: pipo-mapeffect023_192_15
   - first:
-      213: 4479243076946523113
-    second: pipo-mapeffect022_192_16
+      213: 7715048090482338474
+    second: pipo-mapeffect023_192_16
   - first:
-      213: 3091040175764355196
-    second: pipo-mapeffect022_192_17
+      213: 8655700277732954595
+    second: pipo-mapeffect023_192_17
   - first:
-      213: 304208031940035992
-    second: pipo-mapeffect022_192_18
+      213: 6318854978287037720
+    second: pipo-mapeffect023_192_18
   - first:
-      213: 5475343959279376058
-    second: pipo-mapeffect022_192_19
+      213: 8285961019911691043
+    second: pipo-mapeffect023_192_19
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -102,11 +102,11 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 0
+  spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 20
+  spritePixelsToUnits: 25
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
@@ -163,7 +163,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pipo-mapeffect022_192_0
+      name: pipo-mapeffect023_192_0
       rect:
         serializedVersion: 2
         x: 0
@@ -177,14 +177,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5ad641beef223dd0800000000000000
-      internalID: -2507889340269012385
+      spriteID: 6e8c40d62f65d4a80800000000000000
+      internalID: -8481026924057671450
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipo-mapeffect022_192_1
+      name: pipo-mapeffect023_192_1
       rect:
         serializedVersion: 2
         x: 192
@@ -198,14 +198,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 79efae7a1faff6cd0800000000000000
-      internalID: -2562553747139264873
+      spriteID: 10ee18f694dca7270800000000000000
+      internalID: 8249131382769577473
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipo-mapeffect022_192_2
+      name: pipo-mapeffect023_192_2
       rect:
         serializedVersion: 2
         x: 384
@@ -219,14 +219,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 574e00bc7ab860ee0800000000000000
-      internalID: -1295194290040806283
+      spriteID: 185842f8a9a5765e0800000000000000
+      internalID: -1916463496549857919
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipo-mapeffect022_192_3
+      name: pipo-mapeffect023_192_3
       rect:
         serializedVersion: 2
         x: 576
@@ -240,14 +240,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 588dac9f0d66eff70800000000000000
-      internalID: 9222922134631405701
+      spriteID: dec7bb2b390cfca70800000000000000
+      internalID: 8849503533397671149
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipo-mapeffect022_192_4
+      name: pipo-mapeffect023_192_4
       rect:
         serializedVersion: 2
         x: 768
@@ -261,14 +261,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 095280227c3b14b70800000000000000
-      internalID: 8881577608002151824
+      spriteID: a6f7314d34a103140800000000000000
+      internalID: 4697283289970605930
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipo-mapeffect022_192_5
+      name: pipo-mapeffect023_192_5
       rect:
         serializedVersion: 2
         x: 0
@@ -282,14 +282,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 13d83c1a708a02670800000000000000
-      internalID: 8511988046462422321
+      spriteID: e0f4881154dee2520800000000000000
+      internalID: 2679339709234695950
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipo-mapeffect022_192_6
+      name: pipo-mapeffect023_192_6
       rect:
         serializedVersion: 2
         x: 192
@@ -303,14 +303,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2de09eaa8b6ec3210800000000000000
-      internalID: 1314178872101113554
+      spriteID: 337f3eb5e2e2042d0800000000000000
+      internalID: -3296584150590163149
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipo-mapeffect022_192_7
+      name: pipo-mapeffect023_192_7
       rect:
         serializedVersion: 2
         x: 384
@@ -324,14 +324,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 16f2adc1d51f235e0800000000000000
-      internalID: -1931215907970207903
+      spriteID: d904687592c153bd0800000000000000
+      internalID: -2651181841750015843
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipo-mapeffect022_192_8
+      name: pipo-mapeffect023_192_8
       rect:
         serializedVersion: 2
         x: 576
@@ -345,14 +345,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 655a76b6b2d4437a0800000000000000
-      internalID: -6398404321705745066
+      spriteID: 2d511d4c84cfffe40800000000000000
+      internalID: 5692545843489478098
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipo-mapeffect022_192_9
+      name: pipo-mapeffect023_192_9
       rect:
         serializedVersion: 2
         x: 768
@@ -366,14 +366,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 16947cdb444c997e0800000000000000
-      internalID: -1758158379990693535
+      spriteID: 6c278f100c9223200800000000000000
+      internalID: 158234841554907846
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipo-mapeffect022_192_10
+      name: pipo-mapeffect023_192_10
       rect:
         serializedVersion: 2
         x: 0
@@ -387,14 +387,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70eea8b6acd8e5be0800000000000000
-      internalID: -1486594926458507769
+      spriteID: 7187d70ce0ab5ed20800000000000000
+      internalID: 3307254073895254039
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipo-mapeffect022_192_11
+      name: pipo-mapeffect023_192_11
       rect:
         serializedVersion: 2
         x: 192
@@ -408,14 +408,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc497fa2667250930800000000000000
-      internalID: 4108733554806461645
+      spriteID: f3e9c8e47a867cd50800000000000000
+      internalID: 6757484833679384127
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipo-mapeffect022_192_12
+      name: pipo-mapeffect023_192_12
       rect:
         serializedVersion: 2
         x: 384
@@ -429,14 +429,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c34c1224fc43d790800000000000000
-      internalID: -7506571542468475961
+      spriteID: 2163289ab6bb31f20800000000000000
+      internalID: 3392261015419893266
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipo-mapeffect022_192_13
+      name: pipo-mapeffect023_192_13
       rect:
         serializedVersion: 2
         x: 576
@@ -450,14 +450,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b247d474310a0b7e0800000000000000
-      internalID: -1751724250386041813
+      spriteID: 07d7ff2f38c198cb0800000000000000
+      internalID: -4861322969726616208
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipo-mapeffect022_192_14
+      name: pipo-mapeffect023_192_14
       rect:
         serializedVersion: 2
         x: 768
@@ -471,14 +471,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2925e8326661d8100800000000000000
-      internalID: 111770193693135506
+      spriteID: 07aafdbd23bfaa5a0800000000000000
+      internalID: -6509114115554825616
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipo-mapeffect022_192_15
+      name: pipo-mapeffect023_192_15
       rect:
         serializedVersion: 2
         x: 0
@@ -492,14 +492,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c6a37801d0beb2890800000000000000
-      internalID: -7481627914601547156
+      spriteID: 89fcf54675b5440b0800000000000000
+      internalID: -5745366793713627240
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipo-mapeffect022_192_16
+      name: pipo-mapeffect023_192_16
       rect:
         serializedVersion: 2
         x: 192
@@ -513,14 +513,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e37600b8d7792e30800000000000000
-      internalID: 4479243076946523113
+      spriteID: aaa614abc5b511b60800000000000000
+      internalID: 7715048090482338474
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipo-mapeffect022_192_17
+      name: pipo-mapeffect023_192_17
       rect:
         serializedVersion: 2
         x: 384
@@ -534,14 +534,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c7835eea9a495ea20800000000000000
-      internalID: 3091040175764355196
+      spriteID: 3e1d580fa893f1870800000000000000
+      internalID: 8655700277732954595
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipo-mapeffect022_192_18
+      name: pipo-mapeffect023_192_18
       rect:
         serializedVersion: 2
         x: 576
@@ -555,14 +555,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8954b91e793c83400800000000000000
-      internalID: 304208031940035992
+      spriteID: 81de100cf1511b750800000000000000
+      internalID: 6318854978287037720
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pipo-mapeffect022_192_19
+      name: pipo-mapeffect023_192_19
       rect:
         serializedVersion: 2
         x: 768
@@ -576,8 +576,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab69de342545cfb40800000000000000
-      internalID: 5475343959279376058
+      spriteID: 32bd19e85a5adf270800000000000000
+      internalID: 8285961019911691043
       vertices: []
       indices: 
       edges: []
