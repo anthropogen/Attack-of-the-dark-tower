@@ -30,7 +30,8 @@ public class Attacker : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0)&&!EventSystem.current.IsPointerOverGameObject())
+        #region TestInput
+        if  (Input.GetMouseButtonDown(0)&&!EventSystem.current.IsPointerOverGameObject())
         {
             if (_IsAttacking == false && player.CurrentMana > _currentSpell.CostMana)
             {
@@ -50,9 +51,10 @@ public class Attacker : MonoBehaviour
                 }
                 player.GetMana(_currentSpell.CostMana);
             }
-        }
+        } 
+        #endregion
         #region touch 
-        /*   if (Input.touchCount==1)
+          /* if (Input.touchCount==1)
         {
             Touch touch=Input.GetTouch(0);
             if (touch.phase==TouchPhase.Began)

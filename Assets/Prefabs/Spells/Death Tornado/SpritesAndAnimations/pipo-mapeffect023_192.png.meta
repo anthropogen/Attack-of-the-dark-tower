@@ -1,58 +1,67 @@
 fileFormatVersion: 2
-guid: 9f461b7586bc61a44bfebdb00b3e415b
+guid: ad31360f57e434d4f9e5a4b15cd61505
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2233596992707170381
-    second: Explosion 2 SpriteSheet_0
+      213: -8481026924057671450
+    second: pipo-mapeffect023_192_0
   - first:
-      213: -266558163992658860
-    second: Explosion 2 SpriteSheet_1
+      213: 8249131382769577473
+    second: pipo-mapeffect023_192_1
   - first:
-      213: 3474130184189832383
-    second: Explosion 2 SpriteSheet_2
+      213: -1916463496549857919
+    second: pipo-mapeffect023_192_2
   - first:
-      213: -2448677885148521297
-    second: Explosion 2 SpriteSheet_3
+      213: 8849503533397671149
+    second: pipo-mapeffect023_192_3
   - first:
-      213: 55864291260558970
-    second: Explosion 2 SpriteSheet_4
+      213: 4697283289970605930
+    second: pipo-mapeffect023_192_4
   - first:
-      213: -392467112569019914
-    second: Explosion 2 SpriteSheet_5
+      213: 2679339709234695950
+    second: pipo-mapeffect023_192_5
   - first:
-      213: -1461249027297554993
-    second: Explosion 2 SpriteSheet_6
+      213: -3296584150590163149
+    second: pipo-mapeffect023_192_6
   - first:
-      213: -5420960224740922572
-    second: Explosion 2 SpriteSheet_7
+      213: -2651181841750015843
+    second: pipo-mapeffect023_192_7
   - first:
-      213: -7152369420991722564
-    second: Explosion 2 SpriteSheet_8
+      213: 5692545843489478098
+    second: pipo-mapeffect023_192_8
   - first:
-      213: 6159472313738231719
-    second: Explosion 2 SpriteSheet_9
+      213: 158234841554907846
+    second: pipo-mapeffect023_192_9
   - first:
-      213: -6119262798658881989
-    second: Explosion 2 SpriteSheet_10
+      213: 3307254073895254039
+    second: pipo-mapeffect023_192_10
   - first:
-      213: 995329614935615985
-    second: Explosion 2 SpriteSheet_11
+      213: 6757484833679384127
+    second: pipo-mapeffect023_192_11
   - first:
-      213: 5938301110510069438
-    second: Explosion 2 SpriteSheet_12
+      213: 3392261015419893266
+    second: pipo-mapeffect023_192_12
   - first:
-      213: -7688739730400999087
-    second: Explosion 2 SpriteSheet_13
+      213: -4861322969726616208
+    second: pipo-mapeffect023_192_13
   - first:
-      213: 1815071715681316199
-    second: Explosion 2 SpriteSheet_14
+      213: -6509114115554825616
+    second: pipo-mapeffect023_192_14
   - first:
-      213: 1781783629345555362
-    second: Explosion 2 SpriteSheet_15
+      213: -5745366793713627240
+    second: pipo-mapeffect023_192_15
   - first:
-      213: 2221520328687778260
-    second: Explosion 2 SpriteSheet_16
+      213: 7715048090482338474
+    second: pipo-mapeffect023_192_16
+  - first:
+      213: 8655700277732954595
+    second: pipo-mapeffect023_192_17
+  - first:
+      213: 6318854978287037720
+    second: pipo-mapeffect023_192_18
+  - first:
+      213: 8285961019911691043
+    second: pipo-mapeffect023_192_19
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -75,6 +84,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -97,9 +107,9 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 30
+  spritePixelsToUnits: 25
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -154,13 +164,328 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Explosion 2 SpriteSheet_0
+      name: pipo-mapeffect023_192_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 576
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e8c40d62f65d4a80800000000000000
+      internalID: -8481026924057671450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pipo-mapeffect023_192_1
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 576
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10ee18f694dca7270800000000000000
+      internalID: 8249131382769577473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pipo-mapeffect023_192_2
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 576
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 185842f8a9a5765e0800000000000000
+      internalID: -1916463496549857919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pipo-mapeffect023_192_3
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 576
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dec7bb2b390cfca70800000000000000
+      internalID: 8849503533397671149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pipo-mapeffect023_192_4
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 576
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6f7314d34a103140800000000000000
+      internalID: 4697283289970605930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pipo-mapeffect023_192_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0f4881154dee2520800000000000000
+      internalID: 2679339709234695950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pipo-mapeffect023_192_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 384
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 337f3eb5e2e2042d0800000000000000
+      internalID: -3296584150590163149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pipo-mapeffect023_192_7
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 384
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d904687592c153bd0800000000000000
+      internalID: -2651181841750015843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pipo-mapeffect023_192_8
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 384
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d511d4c84cfffe40800000000000000
+      internalID: 5692545843489478098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pipo-mapeffect023_192_9
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 384
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c278f100c9223200800000000000000
+      internalID: 158234841554907846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pipo-mapeffect023_192_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7187d70ce0ab5ed20800000000000000
+      internalID: 3307254073895254039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pipo-mapeffect023_192_11
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3e9c8e47a867cd50800000000000000
+      internalID: 6757484833679384127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pipo-mapeffect023_192_12
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 192
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2163289ab6bb31f20800000000000000
+      internalID: 3392261015419893266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pipo-mapeffect023_192_13
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 192
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07d7ff2f38c198cb0800000000000000
+      internalID: -4861322969726616208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pipo-mapeffect023_192_14
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 192
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07aafdbd23bfaa5a0800000000000000
+      internalID: -6509114115554825616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pipo-mapeffect023_192_15
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 48
-        height: 48
+        width: 192
+        height: 192
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,83 +493,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3bfee468e5ba001e0800000000000000
-      internalID: -2233596992707170381
+      spriteID: 89fcf54675b5440b0800000000000000
+      internalID: -5745366793713627240
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosion 2 SpriteSheet_1
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 45cbc3b13cefc4cf0800000000000000
-      internalID: -266558163992658860
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Explosion 2 SpriteSheet_2
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fbce81ceef6963030800000000000000
-      internalID: 3474130184189832383
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Explosion 2 SpriteSheet_3
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fac1e56ef6c840ed0800000000000000
-      internalID: -2448677885148521297
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Explosion 2 SpriteSheet_4
+      name: pipo-mapeffect023_192_16
       rect:
         serializedVersion: 2
         x: 192
         y: 0
-        width: 48
-        height: 48
+        width: 192
+        height: 192
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -252,62 +514,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a7ee634e64876c000800000000000000
-      internalID: 55864291260558970
+      spriteID: aaa614abc5b511b60800000000000000
+      internalID: 7715048090482338474
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosion 2 SpriteSheet_5
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6f1ec419d3dad8af0800000000000000
-      internalID: -392467112569019914
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Explosion 2 SpriteSheet_6
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fcd4b8f60c998bbe0800000000000000
-      internalID: -1461249027297554993
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Explosion 2 SpriteSheet_7
+      name: pipo-mapeffect023_192_17
       rect:
         serializedVersion: 2
         x: 384
         y: 0
-        width: 48
-        height: 48
+        width: 192
+        height: 192
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -315,83 +535,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 43babc6a561e4c4b0800000000000000
-      internalID: -5420960224740922572
+      spriteID: 3e1d580fa893f1870800000000000000
+      internalID: 8655700277732954595
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosion 2 SpriteSheet_8
-      rect:
-        serializedVersion: 2
-        x: 432
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cbb0c6f08edadbc90800000000000000
-      internalID: -7152369420991722564
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Explosion 2 SpriteSheet_9
-      rect:
-        serializedVersion: 2
-        x: 480
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7af78306f67da7550800000000000000
-      internalID: 6159472313738231719
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Explosion 2 SpriteSheet_10
-      rect:
-        serializedVersion: 2
-        x: 528
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b36bca6e7e2041ba0800000000000000
-      internalID: -6119262798658881989
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Explosion 2 SpriteSheet_11
+      name: pipo-mapeffect023_192_18
       rect:
         serializedVersion: 2
         x: 576
         y: 0
-        width: 48
-        height: 48
+        width: 192
+        height: 192
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -399,83 +556,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f9e9a4e20f10dd00800000000000000
-      internalID: 995329614935615985
+      spriteID: 81de100cf1511b750800000000000000
+      internalID: 6318854978287037720
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosion 2 SpriteSheet_12
-      rect:
-        serializedVersion: 2
-        x: 624
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eb6a245c565196250800000000000000
-      internalID: 5938301110510069438
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Explosion 2 SpriteSheet_13
-      rect:
-        serializedVersion: 2
-        x: 672
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 159040fa3fb1c4590800000000000000
-      internalID: -7688739730400999087
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Explosion 2 SpriteSheet_14
-      rect:
-        serializedVersion: 2
-        x: 720
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 76d2b07db1e603910800000000000000
-      internalID: 1815071715681316199
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Explosion 2 SpriteSheet_15
+      name: pipo-mapeffect023_192_19
       rect:
         serializedVersion: 2
         x: 768
         y: 0
-        width: 48
-        height: 48
+        width: 192
+        height: 192
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -483,29 +577,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2a38fb545ca2ab810800000000000000
-      internalID: 1781783629345555362
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Explosion 2 SpriteSheet_16
-      rect:
-        serializedVersion: 2
-        x: 816
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4d97eb408fc64de10800000000000000
-      internalID: 2221520328687778260
+      spriteID: 32bd19e85a5adf270800000000000000
+      internalID: 8285961019911691043
       vertices: []
       indices: 
       edges: []
@@ -520,6 +593,27 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      pipo-mapeffect023_192_9: 158234841554907846
+      pipo-mapeffect023_192_3: 8849503533397671149
+      pipo-mapeffect023_192_1: 8249131382769577473
+      pipo-mapeffect023_192_2: -1916463496549857919
+      pipo-mapeffect023_192_16: 7715048090482338474
+      pipo-mapeffect023_192_0: -8481026924057671450
+      pipo-mapeffect023_192_13: -4861322969726616208
+      pipo-mapeffect023_192_15: -5745366793713627240
+      pipo-mapeffect023_192_7: -2651181841750015843
+      pipo-mapeffect023_192_10: 3307254073895254039
+      pipo-mapeffect023_192_11: 6757484833679384127
+      pipo-mapeffect023_192_12: 3392261015419893266
+      pipo-mapeffect023_192_8: 5692545843489478098
+      pipo-mapeffect023_192_18: 6318854978287037720
+      pipo-mapeffect023_192_5: 2679339709234695950
+      pipo-mapeffect023_192_19: 8285961019911691043
+      pipo-mapeffect023_192_14: -6509114115554825616
+      pipo-mapeffect023_192_17: 8655700277732954595
+      pipo-mapeffect023_192_6: -3296584150590163149
+      pipo-mapeffect023_192_4: 4697283289970605930
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

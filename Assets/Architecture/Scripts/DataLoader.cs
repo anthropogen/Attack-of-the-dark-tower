@@ -23,7 +23,6 @@ public class DataLoader : MonoBehaviour
     }
     private void Awake()
     {
-      Debug.Log(  savePath = Path.Combine( Application.persistentDataPath, "save"));
         LoadPlayerData();
     }
     public void SavePlayerData()

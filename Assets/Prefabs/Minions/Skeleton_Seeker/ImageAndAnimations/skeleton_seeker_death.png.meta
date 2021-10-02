@@ -39,6 +39,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -232,6 +233,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      skeleton_seeker_death_3: -6736265352867032193
+      skeleton_seeker_death_4: 5288385066018309596
+      skeleton_seeker_death_1: 5066159012069135807
+      skeleton_seeker_death_0: -6345568003008502760
+      skeleton_seeker_death_2: 2700894079903916151
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -57,6 +57,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -376,6 +377,18 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      RedMoonTower_free_idle_animation._2: -7343736504891969453
+      RedMoonTower_free_idle_animation._5: -5564170900477571125
+      RedMoonTower_free_idle_animation._0: -4227435001158437254
+      RedMoonTower_free_idle_animation._9: -2173200318115679039
+      RedMoonTower_free_idle_animation._10: 4213756085002500049
+      RedMoonTower_free_idle_animation._7: 7834845600494809709
+      RedMoonTower_free_idle_animation._4: -7114993313860212086
+      RedMoonTower_free_idle_animation._3: -6083554418270614127
+      RedMoonTower_free_idle_animation._6: 4447534075942178317
+      RedMoonTower_free_idle_animation._8: -698412963896224032
+      RedMoonTower_free_idle_animation._1: -4233646917209677197
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

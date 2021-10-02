@@ -9,14 +9,6 @@ public class SpellBook : MonoBehaviour
     [SerializeField] private SpellView template;
     [SerializeField] private GameObject itemContainer;
     public List<Spell> Spells => spells;
-   
-   /* private void Start()
-    {
-        for (int i = 0; i < spells.Count; i++)
-        {
-            AddItem(spells[i]);
-        }  
-    }*/
     public void Load(PlayerSaveData saveData)
     {
         if (saveData.PurchasedSpells!=null)
@@ -27,7 +19,6 @@ public class SpellBook : MonoBehaviour
                 {
                     if (spell.Key==spells[i].Label)
                     {
-                        Debug.Log($"{spell.Key}-{spell.Value}");
                         spells[i].Load(spell.Value);
                     }
                 }

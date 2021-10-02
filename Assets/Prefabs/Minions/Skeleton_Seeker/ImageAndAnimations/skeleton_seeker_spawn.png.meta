@@ -57,6 +57,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -376,6 +377,18 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      skeleton_seeker_spawn_3: 5481444850429524030
+      skeleton_seeker_spawn_0: 4545535178563740114
+      skeleton_seeker_spawn_2: -1747196357608597081
+      skeleton_seeker_spawn_1: 2334911824761055232
+      skeleton_seeker_spawn_6: -5699167480532747829
+      skeleton_seeker_spawn_10: -1009738412885580642
+      skeleton_seeker_spawn_9: -1454694012045987069
+      skeleton_seeker_spawn_8: -3055421978681551036
+      skeleton_seeker_spawn_4: 2218100200780680496
+      skeleton_seeker_spawn_7: 3128087998959209607
+      skeleton_seeker_spawn_5: 7303945420273348687
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
