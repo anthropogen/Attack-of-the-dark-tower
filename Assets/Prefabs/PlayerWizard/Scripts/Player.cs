@@ -131,6 +131,7 @@ public class Player : Character
 
     public void Load(PlayerSaveData saveData)
     {
+        Debug.Log(saveData.Crystal);
         this.maxMana = saveData.MaxMana;
         this.level =saveData.Level;
         this.Crystal = saveData.Crystal;

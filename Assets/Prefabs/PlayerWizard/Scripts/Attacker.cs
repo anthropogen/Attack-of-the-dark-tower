@@ -54,7 +54,7 @@ public class Attacker : MonoBehaviour
         }*/ 
         #endregion
         #region touch 
-           if (Input.touchCount==1)
+           if (Input.touchCount==1&&Time.timeScale>0)
         {
             Touch touch=Input.GetTouch(0);
             if (touch.phase==TouchPhase.Began)

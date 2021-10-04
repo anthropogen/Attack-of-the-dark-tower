@@ -6,7 +6,7 @@ public class DataLoader : MonoBehaviour
 {
     [SerializeField] private Player player;
     [SerializeField] private SpellBook spellBook;
-    private string savePath;
+    private string _savePath;
     private void OnEnable()
     {
         if (player!=null)
@@ -23,6 +23,10 @@ public class DataLoader : MonoBehaviour
     }
     private void Awake()
     {
+        _savePath = Application.persistentDataPath + "/save.dat";
+    }
+    private void Start()
+    {
         LoadPlayerData();
     }
     public void SavePlayerData()
@@ -33,7 +37,7 @@ public class DataLoader : MonoBehaviour
             purchasedSpells.Add(spellBook.Spells[i].Label, spellBook.Spells[i].IsByed);
         }
         PlayerSaveData saveData = new PlayerSaveData(player.Level,player.Crystal,player.MaxMana,player.SpeedRegenMana,purchasedSpells);
-        using (FileStream file =File.Create(savePath))
+        using (FileStream file =File.Create(_savePath))
         {
             new BinaryFormatter().Serialize(file, saveData);
         }
@@ -41,9 +45,9 @@ public class DataLoader : MonoBehaviour
     public PlayerSaveData LoadPlayerData()
     {
         PlayerSaveData saveData;
-        if (File.Exists(savePath))
+        if (File.Exists(_savePath))
         {
-            using (FileStream file = File.Open(savePath, FileMode.Open))
+            using (FileStream file = File.Open(_savePath, FileMode.Open))
             {
                 var dataLoaded = new BinaryFormatter().Deserialize(file);
                 saveData = (PlayerSaveData)dataLoaded;
